@@ -277,7 +277,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
               if (!context.mounted) return;
 
               context.read<BookingCubit>().selectPayment('Card');
-              context.pop();
+              AppNavigation.back(context, fallback: '/payment/method');
             },
           ),
         ],
@@ -1907,7 +1907,7 @@ class LogoutScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           OutlinedButton(
-            onPressed: () => context.pop(),
+            onPressed: () => AppNavigation.back(context, fallback: '/profile'),
             style: OutlinedButton.styleFrom(
               minimumSize: const Size.fromHeight(54),
             ),
