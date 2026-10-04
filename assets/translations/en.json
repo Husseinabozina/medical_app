@@ -1,0 +1,186 @@
+{
+  "common": {
+    "search": "Search...",
+    "skip": "Skip",
+    "next": "Next",
+    "get_started": "Get Started",
+    "see_all": "See all",
+    "info": "Info",
+    "reset": "Reset",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "change": "Change"
+  },
+  "entry": {
+    "copy": "Your appointments, care team and health records in one calm place."
+  },
+  "onboarding": {
+    "choose_doctor": "Choose Your Doctor",
+    "choose_doctor_body": "Find the right specialist and review the information you need before booking.",
+    "schedule": "Schedule Your Appointments",
+    "schedule_body": "Choose a convenient date and time with a clear, focused booking flow.",
+    "records": "Check Your Medical History",
+    "records_body": "Keep important records and visit history organized so they are easy to revisit."
+  },
+  "auth": {
+    "log_in": "Log In",
+    "sign_up": "Sign Up",
+    "hello": "Hello!",
+    "welcome": "Welcome",
+    "welcome_body": "Sign in to manage your care, appointments and records.",
+    "email_or_mobile": "Email or Mobile Number",
+    "email": "Email",
+    "mobile": "Mobile Number",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "forgot_password": "Forgot Password",
+    "or_sign_up_with": "or sign up with",
+    "or": "or",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account? Log in",
+    "new_account": "New Account",
+    "full_name": "Full Name",
+    "full_name_hint": "Jane Doe",
+    "birth_date": "Date Of Birth",
+    "terms": "By continuing, you agree to the Terms of Use and Privacy Policy.",
+    "set_password": "Set Password",
+    "password_reset_body": "Create a secure password you will use to access HealthTrack.",
+    "create_new_password": "Create New Password"
+  },
+  "home": {
+    "welcome": "Hi, Welcome Back",
+    "user_name": "Jane Doe",
+    "categories": "Categories",
+    "favorite": "Favorite",
+    "doctors": "Doctors",
+    "pharmacy": "Pharmacy",
+    "specialties": "Specialties",
+    "record": "Record",
+    "upcoming": "Upcoming Schedule"
+  },
+  "specialty": {
+    "cardiology": "Cardiology",
+    "dermatology": "Dermatology",
+    "general": "General Medicine",
+    "gynecology": "Gynecology",
+    "odontology": "Odontology",
+    "oncology": "Oncology",
+    "ophthalmology": "Ophthalmology",
+    "orthopedics": "Orthopedics"
+  },
+  "doctors": {
+    "find": "Find Your Doctor",
+    "sort_by": "Sort By",
+    "focus": "Focus",
+    "focus_body": "Clinical care with a clear explanation of next steps, follow-up and practical guidance.",
+    "profile": "Profile",
+    "profile_body": "A patient-first clinician profile that highlights expertise, availability and the essentials needed before booking.",
+    "career": "Career Path",
+    "career_body": "Experienced across outpatient care, diagnosis, treatment planning and coordinated follow-up.",
+    "highlights": "Highlights",
+    "highlights_body": "Clear communication, structured appointments and a calm digital experience designed around patient needs."
+  },
+  "favorite": {
+    "services": "Services",
+    "make_appointment": "Make Appointment"
+  },
+  "profile": {
+    "my_profile": "My Profile",
+    "profile": "Profile",
+    "privacy": "Privacy Policy",
+    "settings": "Settings",
+    "help": "Help",
+    "logout": "Logout"
+  },
+  "settings": {
+    "notifications": "Notification Setting",
+    "password": "Password Manager",
+    "delete": "Delete Account"
+  },
+  "notifications": {
+    "title": "Notification",
+    "mark_all": "Mark all",
+    "appointment": "Scheduled Appointment",
+    "change": "Scheduled Change",
+    "notes": "Medical Notes",
+    "history": "Medical History Update",
+    "body": "A new update is available. Open it to review the details."
+  },
+  "messages": {
+    "typing": "Dr. Emma is typing...",
+    "write_here": "Write Here..."
+  },
+  "filters": {
+    "title": "Filters",
+    "available_today": "Availability Today",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "other": "Other",
+    "top_rated": "Top Rated",
+    "experience": "Work Experience (Years)",
+    "specialty": "Specialty",
+    "age": "Age"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "hours": "Mon - Sat / 9 AM - 4 PM",
+    "choose_date": "Choose Date",
+    "month": "Month",
+    "available": "Available Time",
+    "patient_details": "Patient Details",
+    "yourself": "Yourself",
+    "other_person": "Another Person",
+    "problem": "Describe your problem",
+    "problem_hint": "Enter your problem here...",
+    "continue": "Continue Booking"
+  },
+  "appointments": {
+    "title": "All Appointment",
+    "complete": "Complete",
+    "upcoming": "Upcoming",
+    "cancelled": "Cancelled",
+    "details": "Details",
+    "empty": "No appointments in this section yet.",
+    "your": "Your Appointment",
+    "booking_for": "Booking For",
+    "problem_body": "Recurring discomfort for several days. The patient would like an assessment and advice on the next appropriate step."
+  },
+  "review": {
+    "title": "Review",
+    "body": "Share a short review about the appointment experience.",
+    "comment": "Your Comment",
+    "comment_hint": "Enter your comment here...",
+    "add": "Add Review"
+  },
+  "pharmacy": {
+    "title": "Pharmacy",
+    "find": "Find Your Pharmacy",
+    "address": "Address",
+    "schedule": "Schedule",
+    "recommended": "Recommended"
+  },
+  "records": {
+    "title": "Medical Record",
+    "empty": "You Have Not Added Any Medical Records Yet",
+    "add": "Add Records"
+  },
+  "payment": {
+    "title": "Payment",
+    "method": "Payment Method",
+    "card_title": "Credit & Debit Card",
+    "add_card": "Add New Card",
+    "more": "More Payment Option",
+    "date_hour": "Date / Hour",
+    "duration": "Duration",
+    "minutes": "Minutes",
+    "amount": "Amount",
+    "total": "Total",
+    "pay_now": "Pay Now",
+    "congratulation": "Congratulation",
+    "success": "Payment is Successful",
+    "booked_with": "You have successfully booked an appointment with",
+    "download": "Download Receipt",
+    "return": "Return Now"
+  }
+}
