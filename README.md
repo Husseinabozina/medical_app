@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/healthtrack-logo.png" alt="HealthTrack logo" width="96" />
+
 <img src="docs/assets/healthtrack-cover.svg" alt="HealthTrack — 61-screen Flutter product showcase" width="1200" />
 
 # HealthTrack
@@ -35,22 +37,30 @@ HealthTrack is a **complete Flutter implementation** of a public Figma Community
 
 The original Figma Community file is the **design reference**. This repository represents my Flutter implementation and engineering work; it does not claim authorship of the source UI kit.
 
-## Live Figma screen explorer
+## Selected interface previews
 
-GitHub README files cannot embed the interactive Figma canvas safely, so the portfolio site contains a **live Figma source viewer**. Select a screen there and it loads the exact source node directly from Figma — not a recreated marketing screenshot.
+These are selected mobile frames used to present the implemented HealthTrack journeys. The live portfolio places them inside a responsive device viewer without cropping or shifting the screen.
 
-| Source frame | Figma node | Open |
-|---|---:|---|
-| **Home** | `2213:326` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2213-326&m=dev) |
-| **Specialties** | `2068:756` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2068-756&m=dev) |
-| **Doctors** | `2068:376` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2068-376&m=dev) |
-| **Doctor profile** | `2097:1242` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2097-1242&m=dev) |
-| **Schedule** | `2088:1073` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2088-1073&m=dev) |
-| **Appointment details** | `2088:1187` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2088-1187&m=dev) |
-| **Medical record** | `2110:221` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2110-221&m=dev) |
-| **Payment summary** | `2128:1624` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2128-1624&m=dev) |
+<div align="center">
+<table>
+<tr>
+<td align="center"><img src="docs/assets/app-screens/01-home.png" alt="HealthTrack Home" width="190"/><br/><sub><b>Home</b></sub></td>
+<td align="center"><img src="docs/assets/app-screens/03-doctors.png" alt="HealthTrack Doctors" width="190"/><br/><sub><b>Doctors</b></sub></td>
+<td align="center"><img src="docs/assets/app-screens/04-doctor-profile.png" alt="HealthTrack Doctor Profile" width="190"/><br/><sub><b>Doctor profile</b></sub></td>
+<td align="center"><img src="docs/assets/app-screens/05-schedule.png" alt="HealthTrack Schedule" width="190"/><br/><sub><b>Schedule</b></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="docs/assets/app-screens/02-specialties.png" alt="HealthTrack Specialties" width="190"/><br/><sub><b>Specialties</b></sub></td>
+<td align="center"><img src="docs/assets/app-screens/06-appointment-details.png" alt="HealthTrack Appointment Details" width="190"/><br/><sub><b>Appointment</b></sub></td>
+<td align="center"><img src="docs/assets/app-screens/07-medical-record.png" alt="HealthTrack Medical Record" width="190"/><br/><sub><b>Medical record</b></sub></td>
+<td align="center"><img src="docs/assets/app-screens/08-payment-summary.png" alt="HealthTrack Payment Summary" width="190"/><br/><sub><b>Payment summary</b></sub></td>
+</tr>
+</table>
+</div>
 
-> **[Open the interactive viewer →](https://husseinabozina.github.io/medical_app/#figma)**
+> **[Open the interactive app-screen viewer →](https://husseinabozina.github.io/medical_app/#screens)**
+
+The original Community UI kit remains linked below as the design reference and attribution source.
 
 ## The connected product journey
 
