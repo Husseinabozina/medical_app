@@ -112,7 +112,7 @@ class DemoHealthRepository implements HealthRepository {
   ];
 
   @override
-  List<Appointment> get appointments => const [
+  List<Appointment> get appointments => [
         Appointment(
           id: 'a1',
           doctor: _doctors[0],
