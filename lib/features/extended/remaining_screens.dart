@@ -258,7 +258,24 @@ class _AddCardScreenState extends State<AddCardScreen> {
           const SizedBox(height: 28),
           PrimaryButton(
             label: 'Save Card',
-            onPressed: () {
+            onPressed: () async {
+              final digits = number.text.replaceAll(RegExp(r'\\D'), '');
+              final last4 = digits.length >= 4
+                  ? digits.substring(digits.length - 4)
+                  : digits.padLeft(4, '0');
+
+              await context.read<HealthRepository>().addPaymentCard(
+                    PaymentCard(
+                      id: 'card-${DateTime.now().millisecondsSinceEpoch}',
+                      holder: holder.text.trim().isEmpty
+                          ? 'Card holder'
+                          : holder.text.trim(),
+                      last4: last4,
+                      expiry: expiry.text.trim(),
+                    ),
+                  );
+              if (!context.mounted) return;
+
               context.read<BookingCubit>().selectPayment('Card');
               context.pop();
             },
@@ -348,7 +365,19 @@ class _MedicalRecordAddScreenState extends State<MedicalRecordAddScreen> {
           const SizedBox(height: 28),
           PrimaryButton(
             label: 'Save',
-            onPressed: () => context.go('/medical-record/menu'),
+            onPressed: () async {
+              await context.read<HealthRepository>().addMedicalRecord(
+                    MedicalRecordEntry(
+                      id: 'record-${DateTime.now().millisecondsSinceEpoch}',
+                      title: 'Health Profile',
+                      category: 'Profile',
+                      summary:
+                          '${age.round()} years · ${weight.round()} kg · ${height.round()} cm · $bloodType · $gender',
+                    ),
+                  );
+              if (!context.mounted) return;
+              context.go('/medical-record/menu');
+            },
           ),
         ],
       ),
@@ -1236,8 +1265,13 @@ class AppointmentCompleteScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: OutlinedButton(
-                            onPressed: () =>
-                                context.push('/doctor/emma/schedule'),
+                            onPressed: () async {
+                              await context
+                                  .read<HealthRepository>()
+                                  .rebookAppointment('a1');
+                              if (!context.mounted) return;
+                              context.push('/doctor/emma/schedule');
+                            },
                             child: const Text('Re-Book'),
                           ),
                         ),
@@ -1386,7 +1420,13 @@ class _CancelAppointmentScreenState extends State<CancelAppointmentScreen> {
           const SizedBox(height: 24),
           PrimaryButton(
             label: 'Cancel Appointment',
-            onPressed: () => context.go('/appointments/cancelled'),
+            onPressed: () async {
+              await context
+                  .read<HealthRepository>()
+                  .cancelAppointment('a1', reason);
+              if (!context.mounted) return;
+              context.go('/appointments/cancelled');
+            },
           ),
         ],
       ),
@@ -1466,9 +1506,18 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           const SizedBox(height: 28),
           PrimaryButton(
             label: 'Update Profile',
-            onPressed: () {
+            onPressed: () async {
+              await context.read<HealthRepository>().updateProfile(
+                    UserProfile(
+                      name: name.text.trim(),
+                      phone: phone.text.trim(),
+                      email: email.text.trim(),
+                      dateOfBirth: birth.text.trim(),
+                    ),
+                  );
+              if (!context.mounted) return;
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Profile updated for demo')),
+                const SnackBar(content: Text('Profile updated')),
               );
             },
           ),
