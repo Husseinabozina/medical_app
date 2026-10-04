@@ -9,6 +9,39 @@ import '../features/home/home_screens.dart';
 import '../features/payments/payment_screens.dart';
 import '../features/services/service_screens.dart';
 
+const portfolioRoutePaths = <String>[
+  '/',
+  '/register',
+  '/onboarding/1',
+  '/onboarding/2',
+  '/onboarding/3',
+  '/login',
+  '/login/form',
+  '/signup',
+  '/set-password',
+  '/home',
+  '/specialties',
+  '/specialties/cardiology',
+  '/doctors',
+  '/doctor/:id',
+  '/favorites',
+  '/profile',
+  '/settings',
+  '/notifications',
+  '/message',
+  '/filter',
+  '/doctor/:id/profile',
+  '/doctor/:id/schedule',
+  '/appointments/upcoming',
+  '/appointments/details',
+  '/review',
+  '/pharmacy',
+  '/medical-record',
+  '/payment/method',
+  '/payment/summary',
+  '/payment/success',
+];
+
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
   routes: [
