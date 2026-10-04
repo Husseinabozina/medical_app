@@ -144,6 +144,26 @@ This is a **pragmatic Clean Architecture** portfolio implementation:
 
 The current repo intentionally uses demo data and no real medical or payment backend.
 
+## Mock backend
+
+HealthTrack now includes a mutable in-memory backend for portfolio/runtime testing.
+
+It covers:
+
+- doctors, specialties and pharmacies;
+- favorite mutations;
+- chat message sending;
+- appointment cancellation and re-booking;
+- medical-record creation;
+- saved payment-card creation;
+- profile updates.
+
+The mock backend deliberately adds a short artificial delay so loading/interaction behavior is closer to a real API. Data survives for the current app process only and resets on restart.
+
+The backend is selected through `BACKEND_MODE`. The current project ships only the mock implementation; `real` is intentionally reserved for a future REST/Firebase adapter and fails fast instead of silently falling back.
+
+VS Code/Cursor includes a **HealthTrack — Mock** launch configuration.
+
 ## Run locally
 
 The repository was initialized source-first. If generated platform folders are not present yet, run once from the repo root:
