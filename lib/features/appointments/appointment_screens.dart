@@ -65,7 +65,7 @@ class DoctorProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 10),
-              Expanded(
+              const Expanded(
                 child: _ProfileMetric(
                   icon: CupertinoIcons.chat_bubble_2,
                   value: '2.4k',
@@ -484,9 +484,9 @@ class AppointmentDetailsScreen extends StatelessWidget {
             style: const TextStyle(color: AppColors.muted),
           ),
           const SizedBox(height: 24),
-          SoftCard(
+          const SoftCard(
             child: Column(
-              children: const [
+              children: [
                 _DetailRow(
                   icon: CupertinoIcons.calendar,
                   title: 'Date',

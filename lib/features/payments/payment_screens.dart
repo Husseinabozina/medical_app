@@ -135,7 +135,7 @@ class PaymentSummaryScreen extends StatelessWidget {
               SoftCard(
                 child: Column(
                   children: [
-                    _SummaryRow(label: 'Date', value: '12 October 2026'),
+                    const _SummaryRow(label: 'Date', value: '12 October 2026'),
                     const Divider(height: 1),
                     _SummaryRow(label: 'Time', value: state.time),
                     const Divider(height: 1),
@@ -207,10 +207,10 @@ class PaymentSuccessScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 26),
-            SoftCard(
+            const SoftCard(
               color: AppColors.softBlue,
               child: Column(
-                children: const [
+                children: [
                   _SummaryRow(label: 'Doctor', value: 'Dr. Emma Wilson'),
                   Divider(height: 1),
                   _SummaryRow(label: 'Date', value: '12 October 2026'),
