@@ -17,7 +17,7 @@ class PharmacyScreen extends StatelessWidget {
       title: 'Pharmacy',
       showBack: true,
       trailing: IconButton(
-        onPressed: () => context.push('/filter'),
+        onPressed: () => context.push('/pharmacy/filter'),
         icon: const Icon(CupertinoIcons.slider_horizontal_3),
       ),
       child: Column(
@@ -35,6 +35,7 @@ class PharmacyScreen extends StatelessWidget {
               child: AnimatedAppear(
                 delay: Duration(milliseconds: 65 * entry.key),
                 child: SoftCard(
+                  onTap: () => context.push('/pharmacy/details'),
                   child: Row(
                     children: [
                       Container(
@@ -123,6 +124,7 @@ class MedicalRecordScreen extends StatelessWidget {
         children: [
           SoftCard(
             color: AppColors.softBlue,
+            onTap: () => context.push('/medical-record/menu'),
             child: Row(
               children: [
                 Container(
@@ -172,38 +174,38 @@ class MedicalRecordScreen extends StatelessWidget {
                 ),
           ),
           const SizedBox(height: 12),
-          const _RecordItem(
+          _RecordItem(
             icon: CupertinoIcons.heart,
             title: 'Medical history',
             subtitle: '2 records',
+            onTap: () => context.push('/medical-record/history'),
           ),
           const SizedBox(height: 12),
-          const _RecordItem(
+          _RecordItem(
             icon: CupertinoIcons.doc_text,
             title: 'Analysis',
             subtitle: '5 reports',
+            onTap: () => context.push('/medical-record/analysis'),
           ),
           const SizedBox(height: 12),
-          const _RecordItem(
+          _RecordItem(
             icon: CupertinoIcons.exclamationmark_triangle,
             title: 'Allergies',
             subtitle: 'No severe allergies',
+            onTap: () => context.push('/medical-record/allergies'),
           ),
           const SizedBox(height: 12),
-          const _RecordItem(
+          _RecordItem(
             icon: CupertinoIcons.check_mark_circled,
             title: 'Vaccinations',
             subtitle: '8 records',
+            onTap: () => context.push('/medical-record/vaccinations'),
           ),
           const SizedBox(height: 26),
           PrimaryButton(
             label: 'Add record',
             icon: CupertinoIcons.add,
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Demo record action')),
-              );
-            },
+            onPressed: () => context.push('/medical-record/add'),
           ),
         ],
       ),
@@ -216,16 +218,18 @@ class _RecordItem extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.subtitle,
+    this.onTap,
   });
 
   final IconData icon;
   final String title;
   final String subtitle;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return SoftCard(
-      onTap: () {},
+      onTap: onTap,
       child: Row(
         children: [
           Container(
