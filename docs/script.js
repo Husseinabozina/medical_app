@@ -1,107 +1,127 @@
 (() => {
-  const fileKey = 'jrf18b58l0rdFM4uTN5DEg';
-  const fileName = 'Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-';
-
   const screens = {
     home: {
       number: '01',
       title: 'Home',
-      node: '2213:326',
-      nodeUrl: '2213-326',
+      flow: 'Discovery',
+      route: '/home',
+      image: 'docs/assets/app-screens/01-home.png',
+      alt: 'HealthTrack home interface',
       copy: 'The main HealthTrack entry point with quick access, upcoming care and doctor discovery.'
     },
     specialties: {
       number: '02',
       title: 'Specialties',
-      node: '2068:756',
-      nodeUrl: '2068-756',
-      copy: 'The specialty directory that branches into the eight implemented doctor-list variants.'
+      flow: 'Browse care',
+      route: '/specialties',
+      image: 'docs/assets/app-screens/02-specialties.png',
+      alt: 'HealthTrack specialties interface',
+      copy: 'A clear specialty directory that branches into the implemented doctor-list journeys.'
     },
     doctors: {
       number: '03',
       title: 'Doctors',
-      node: '2068:376',
-      nodeUrl: '2068-376',
-      copy: 'Doctor discovery with search, filtering, cards and favorite state connected to the broader flow.'
+      flow: 'Discovery',
+      route: '/doctors',
+      image: 'docs/assets/app-screens/03-doctors.png',
+      alt: 'HealthTrack doctors interface',
+      copy: 'Doctor discovery with search, filters, cards and favorite state connected to the wider app flow.'
     },
     profile: {
       number: '04',
       title: 'Doctor profile',
-      node: '2097:1242',
-      nodeUrl: '2097-1242',
-      copy: 'A fuller doctor view that keeps the path from discovery into booking clear and focused.'
+      flow: 'Doctor details',
+      route: '/doctor/emma/profile',
+      image: 'docs/assets/app-screens/04-doctor-profile.png',
+      alt: 'HealthTrack doctor profile interface',
+      copy: 'A detailed doctor view that keeps the path from discovery into booking focused and readable.'
     },
     schedule: {
       number: '05',
       title: 'Schedule',
-      node: '2088:1073',
-      nodeUrl: '2088-1073',
-      copy: 'Date and time selection with stateful booking choices before continuing to payment.'
+      flow: 'Booking',
+      route: '/doctor/emma/schedule',
+      image: 'docs/assets/app-screens/05-schedule.png',
+      alt: 'HealthTrack appointment scheduling interface',
+      copy: 'Date and time selection before continuing through payment and appointment confirmation.'
     },
     appointment: {
       number: '06',
       title: 'Appointment details',
-      node: '2088:1187',
-      nodeUrl: '2088-1187',
-      copy: 'Appointment information and actions connected to cancel, review and follow-up journeys.'
+      flow: 'Follow-up',
+      route: '/appointments/details',
+      image: 'docs/assets/app-screens/06-appointment-details.png',
+      alt: 'HealthTrack appointment details interface',
+      copy: 'Appointment information and actions connected to cancellation, review and follow-up states.'
     },
     record: {
       number: '07',
       title: 'Medical record',
-      node: '2110:221',
-      nodeUrl: '2110-221',
+      flow: 'Health records',
+      route: '/medical-record/menu',
+      image: 'docs/assets/app-screens/07-medical-record.png',
+      alt: 'HealthTrack medical record interface',
       copy: 'A structured entry point for allergies, analysis, vaccinations and medical history.'
     },
     payment: {
       number: '08',
       title: 'Payment summary',
-      node: '2128:1624',
-      nodeUrl: '2128-1624',
+      flow: 'Checkout',
+      route: '/payment/summary',
+      image: 'docs/assets/app-screens/08-payment-summary.png',
+      alt: 'HealthTrack payment summary interface',
       copy: 'The review step before the showcase payment success state and appointment confirmation.'
     }
   };
 
-  const frame = document.querySelector('#figma-frame');
-  const loading = document.querySelector('#figma-loading');
+  const image = document.querySelector('#app-screen-image');
+  const indicator = document.querySelector('#screen-swap-indicator');
   const number = document.querySelector('#screen-number');
   const title = document.querySelector('#screen-title');
-  const node = document.querySelector('#screen-node');
+  const flow = document.querySelector('#screen-flow');
+  const route = document.querySelector('#screen-route');
   const copy = document.querySelector('#screen-copy');
-  const figmaLink = document.querySelector('#figma-link');
   const tabs = [...document.querySelectorAll('.screen-tab')];
-
-  function embedUrl(screen) {
-    return `https://embed.figma.com/design/${fileKey}/${fileName}?embed-host=healthtrack-showcase&node-id=${screen.nodeUrl}&footer=false&page-selector=false&viewport-controls=false&theme=light`;
-  }
-
-  function sourceUrl(screen) {
-    return `https://www.figma.com/design/${fileKey}/${fileName}?node-id=${screen.nodeUrl}&m=dev`;
-  }
 
   function selectScreen(key) {
     const screen = screens[key];
-    if (!screen || !frame) return;
+    if (!screen || !image) return;
 
-    tabs.forEach((tab) => {
-      tab.classList.toggle('is-active', tab.dataset.screen === key);
-    });
+    tabs.forEach((tab) => tab.classList.toggle('is-active', tab.dataset.screen === key));
 
-    loading?.classList.remove('is-hidden');
-    frame.src = embedUrl(screen);
+    number.textContent = screen.number;
+    title.textContent = screen.title;
+    flow.textContent = screen.flow;
+    route.textContent = screen.route;
+    copy.textContent = screen.copy;
 
-    if (number) number.textContent = screen.number;
-    if (title) title.textContent = screen.title;
-    if (node) node.textContent = screen.node;
-    if (copy) copy.textContent = screen.copy;
-    if (figmaLink) figmaLink.href = sourceUrl(screen);
+    image.classList.add('is-changing');
+    indicator?.classList.add('is-visible');
+
+    const next = new Image();
+    next.src = screen.image;
+    next.alt = screen.alt;
+
+    next.onload = () => {
+      image.src = screen.image;
+      image.alt = screen.alt;
+      image.classList.remove('is-changing');
+      indicator?.classList.remove('is-visible');
+    };
+
+    next.onerror = () => {
+      image.classList.remove('is-changing');
+      indicator?.classList.remove('is-visible');
+    };
   }
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => selectScreen(tab.dataset.screen));
   });
 
-  frame?.addEventListener('load', () => {
-    window.setTimeout(() => loading?.classList.add('is-hidden'), 500);
+  Object.values(screens).slice(1).forEach((screen) => {
+    const preload = new Image();
+    preload.src = screen.image;
   });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
