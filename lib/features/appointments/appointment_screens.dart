@@ -344,17 +344,25 @@ class AppointmentUpcomingScreen extends StatelessWidget {
                     children: [
                       Expanded(
                         child: _AppointmentTab(
+                          label: 'Complete',
+                          selected: false,
+                          onTap: () => context.go('/appointments/complete'),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: _AppointmentTab(
                           label: 'Upcoming',
                           selected: true,
                           onTap: () {},
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: _AppointmentTab(
-                          label: 'Completed',
+                          label: 'Cancelled',
                           selected: false,
-                          onTap: () {},
+                          onTap: () => context.go('/appointments/cancelled'),
                         ),
                       ),
                     ],
@@ -430,7 +438,8 @@ class AppointmentUpcomingScreen extends StatelessWidget {
                             children: [
                               Expanded(
                                 child: OutlinedButton(
-                                  onPressed: () {},
+                                  onPressed: () =>
+                                      context.push('/appointments/cancel'),
                                   child: const Text('Cancel'),
                                 ),
                               ),
