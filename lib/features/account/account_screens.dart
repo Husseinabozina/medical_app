@@ -58,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                         _ProfileRow(
                           icon: CupertinoIcons.person_crop_circle,
                           title: 'Edit profile',
-                          onTap: () {},
+                          onTap: () => context.push('/profile/edit'),
                         ),
                         const Divider(height: 1),
                         _ProfileRow(
@@ -87,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                       icon: CupertinoIcons.arrow_right,
                       title: 'Log out',
                       destructive: true,
-                      onTap: () => context.go('/login'),
+                      onTap: () => context.push('/logout'),
                     ),
                   ),
                 ],
@@ -141,6 +141,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   value: messages,
                   onChanged: (value) => setState(() => messages = value),
                 ),
+                const Divider(height: 1),
+                _ProfileRow(
+                  icon: CupertinoIcons.bell,
+                  title: 'Notification settings',
+                  onTap: () => context.push('/settings/notifications'),
+                ),
               ],
             ),
           ),
@@ -164,15 +170,30 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 _ProfileRow(
                   icon: CupertinoIcons.lock,
                   title: 'Password manager',
-                  onTap: () => context.push('/set-password'),
+                  onTap: () => context.push('/settings/password-manager'),
                 ),
                 const Divider(height: 1),
                 _ProfileRow(
                   icon: CupertinoIcons.lock,
                   title: 'Privacy policy',
-                  onTap: () {},
+                  onTap: () => context.push('/settings/privacy'),
                 ),
               ],
+            ),
+          ),
+          const SizedBox(height: 22),
+          Text(
+            'Support',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w800,
+                ),
+          ),
+          const SizedBox(height: 12),
+          SoftCard(
+            child: _ProfileRow(
+              icon: CupertinoIcons.question_circle,
+              title: 'Help center',
+              onTap: () => context.push('/help/faq'),
             ),
           ),
         ],
