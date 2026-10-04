@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -458,7 +456,7 @@ class SuccessPulse extends StatelessWidget {
       tween: Tween(begin: .3, end: 1),
       curve: Curves.elasticOut,
       builder: (context, value, child) => Transform.scale(
-        scale: math.min(value, 1.0),
+        scale: value > 1 ? 1 : value,
         child: child,
       ),
       child: Container(
