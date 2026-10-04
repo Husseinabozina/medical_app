@@ -36,7 +36,7 @@ This is intentionally pragmatic Clean Architecture: boundaries that make replace
 4. Figma screenshots are reference-only, never shipped as screen images.
 5. Reusable visual patterns are implemented once: soft cards, primary buttons, doctor avatars, ratings, headers, logo, and motion.
 6. The original kit uses real doctor photography; this portfolio version uses abstract initials to avoid shipping face photography while preserving card geometry.
-7. The 61 source frames are reduced to 30 deliberately selected screens that cover distinct product flows instead of repeating near-identical specialty variants.
+7. All 61 top-level HealthTrack source frames are implemented. Repeated specialty/favorite variants reuse shared Flutter components while retaining distinct routes and source-frame mappings.
 
 ## Motion gate
 
@@ -48,11 +48,11 @@ Animations must satisfy all of the following:
 - avoid repeated large-scale motion around medical information;
 - respect the calm/trustworthy product character.
 
-The implementation uses a splash pulse, staggered content entrance, short fade/slide route transitions, animated selections, favorite-state feedback, and a restrained success confirmation.
+The implementation uses a splash pulse, staggered content entrance, short fade/slide route transitions, animated selections, favorite-state feedback, expandable FAQ content, and restrained success confirmation.
 
 ## Automated quality gate
 
-GitHub Actions runs `flutter pub get`, `flutter analyze`, and `flutter test` for this feature branch and pull requests. The route catalog test also locks the portfolio scope to exactly 30 unique screen routes.
+GitHub Actions runs `flutter pub get`, `flutter analyze`, and `flutter test` for this feature branch and pull requests. The route catalog test also locks the portfolio scope to exactly 61 unique screen routes.
 
 ## Next production-hardening step
 
