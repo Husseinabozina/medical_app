@@ -14,9 +14,7 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="HealthTrack showcase home">
-      <span class="brand-mark" aria-hidden="true">
-        <i></i><b>+</b>
-      </span>
+      <img class="brand-logo" src="docs/assets/healthtrack-logo.png" alt="HealthTrack logo" width="44" height="44" />
       <span class="brand-copy">
         <strong>HealthTrack</strong>
         <small>Flutter Product Showcase</small>
@@ -25,7 +23,7 @@
 
     <nav aria-label="Primary navigation">
       <a href="#story">Product</a>
-      <a href="#figma">Live Figma</a>
+      <a href="#screens">App Screens</a>
       <a href="#engineering">Engineering</a>
       <a href="#download">APK</a>
     </nav>
@@ -49,7 +47,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#figma">Explore the real Figma screens</a>
+          <a class="button button-primary" href="#screens">Explore the app screens</a>
           <a class="button button-glass" href="https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk">
             Download APK <span>↓</span>
           </a>
@@ -67,7 +65,7 @@
         <div class="stage-ring ring-one"></div>
         <div class="stage-ring ring-two"></div>
         <div class="stage-core">
-          <div class="core-icon">+</div>
+          <img class="core-logo" src="docs/assets/healthtrack-logo.png" alt="" width="74" height="74" />
           <strong>HealthTrack</strong>
           <span>61-screen system</span>
         </div>
@@ -173,73 +171,75 @@
       </div>
     </section>
 
-    <section class="figma-section" id="figma">
+    <section class="screens-section" id="screens">
       <div class="shell">
         <div class="section-heading centered light-heading">
-          <div class="eyebrow"><span></span> LIVE FIGMA SOURCE VIEWER</div>
-          <h2>The screens below come directly from the Figma source.</h2>
+          <div class="eyebrow"><span></span> MOBILE EXPERIENCE</div>
+          <h2>Explore the app interface screen by screen.</h2>
           <p>
-            Pick a screen and the viewer loads that exact frame from Figma. This is the design source used for the Flutter implementation — not a recreated marketing mockup.
+            Move through selected HealthTrack views inside the device preview. Each image preserves the full mobile frame so the screen stays centered and never gets clipped.
           </p>
         </div>
 
-        <div class="figma-explorer">
-          <aside class="screen-selector" aria-label="Choose a Figma screen">
+        <div class="screen-explorer">
+          <aside class="screen-selector" aria-label="Choose an app screen">
             <button class="screen-tab is-active" data-screen="home">
-              <span>01</span><b>Home</b><small>2213:326</small>
+              <span>01</span><b>Home</b><small>Overview</small>
             </button>
             <button class="screen-tab" data-screen="specialties">
-              <span>02</span><b>Specialties</b><small>2068:756</small>
+              <span>02</span><b>Specialties</b><small>Browse care</small>
             </button>
             <button class="screen-tab" data-screen="doctors">
-              <span>03</span><b>Doctors</b><small>2068:376</small>
+              <span>03</span><b>Doctors</b><small>Discovery</small>
             </button>
             <button class="screen-tab" data-screen="profile">
-              <span>04</span><b>Doctor profile</b><small>2097:1242</small>
+              <span>04</span><b>Doctor profile</b><small>Details</small>
             </button>
             <button class="screen-tab" data-screen="schedule">
-              <span>05</span><b>Schedule</b><small>2088:1073</small>
+              <span>05</span><b>Schedule</b><small>Booking</small>
             </button>
             <button class="screen-tab" data-screen="appointment">
-              <span>06</span><b>Appointment</b><small>2088:1187</small>
+              <span>06</span><b>Appointment</b><small>Follow-up</small>
             </button>
             <button class="screen-tab" data-screen="record">
-              <span>07</span><b>Medical record</b><small>2110:221</small>
+              <span>07</span><b>Medical record</b><small>History</small>
             </button>
             <button class="screen-tab" data-screen="payment">
-              <span>08</span><b>Payment summary</b><small>2128:1624</small>
+              <span>08</span><b>Payment summary</b><small>Checkout</small>
             </button>
           </aside>
 
-          <div class="figma-device-wrap">
+          <div class="app-device-wrap">
             <div class="device-shadow"></div>
-            <div class="figma-device">
+            <div class="app-device">
               <div class="device-top"><span></span></div>
-              <div class="figma-loading" id="figma-loading">
-                <span></span><span></span><span></span>
-                <p>Loading the Figma frame…</p>
+              <div class="screen-image-stage">
+                <img
+                  id="app-screen-image"
+                  src="docs/assets/app-screens/01-home.png"
+                  alt="HealthTrack home interface"
+                  width="360"
+                  height="800"
+                  decoding="async"
+                />
+                <div class="screen-swap-indicator" id="screen-swap-indicator" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                </div>
               </div>
-              <iframe
-                id="figma-frame"
-                title="Live Figma HealthTrack screen"
-                src="https://embed.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?embed-host=healthtrack-showcase&node-id=2213-326&footer=false&page-selector=false&viewport-controls=false&theme=light"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
             </div>
           </div>
 
           <div class="screen-notes">
-            <span class="live-chip"><i></i> LIVE FIGMA FRAME</span>
+            <span class="preview-chip"><i></i> APP INTERFACE</span>
             <div class="screen-count"><b id="screen-number">01</b><span>/ 08 selected</span></div>
             <h3 id="screen-title">Home</h3>
             <p id="screen-copy">The main HealthTrack entry point with quick access, upcoming care and doctor discovery.</p>
             <div class="screen-meta">
-              <span><small>Figma node</small><b id="screen-node">2213:326</b></span>
-              <span><small>Implementation</small><b>Flutter route</b></span>
+              <span><small>Flow</small><b id="screen-flow">Discovery</b></span>
+              <span><small>Flutter route</small><b id="screen-route">/home</b></span>
             </div>
-            <a id="figma-link" class="inline-link" href="https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2213-326&m=dev" target="_blank" rel="noopener noreferrer">
-              Open this frame in Figma <span>↗</span>
+            <a class="inline-link" href="https://github.com/Husseinabozina/medical_app" target="_blank" rel="noopener noreferrer">
+              Explore the implementation <span>↗</span>
             </a>
           </div>
         </div>
@@ -380,13 +380,13 @@
   <footer>
     <div class="shell footer-inner">
       <a class="brand footer-brand" href="#top">
-        <span class="brand-mark"><i></i><b>+</b></span>
+        <img class="brand-logo" src="docs/assets/healthtrack-logo.png" alt="HealthTrack logo" width="44" height="44" />
         <span class="brand-copy"><strong>HealthTrack</strong><small>Flutter Product Showcase</small></span>
       </a>
       <p>Flutter implementation & engineering showcase by Hussein Abozina.</p>
       <div class="footer-links">
         <a href="https://github.com/Husseinabozina/medical_app" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="#figma">Figma viewer ↑</a>
+        <a href="#screens">App screens ↑</a>
       </div>
     </div>
   </footer>
