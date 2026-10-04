@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'navigation.dart';
+
 abstract final class AppColors {
   static const aqua = Color(0xFF33E4DB);
   static const cyan = Color(0xFF00BBD3);
@@ -103,7 +105,7 @@ class HealthScaffold extends StatelessWidget {
                           width: 44,
                           child: showBack
                               ? IconButton(
-                                  onPressed: () => Navigator.of(context).maybePop(),
+                                  onPressed: () => AppNavigation.back(context),
                                   icon: const Icon(
                                     CupertinoIcons.back,
                                     color: AppColors.ink,
