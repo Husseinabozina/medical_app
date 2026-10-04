@@ -53,7 +53,19 @@ class PaymentMethodScreen extends StatelessWidget {
                 onTap: () =>
                     context.read<BookingCubit>().selectPayment('Wallet'),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 20),
+              OutlinedButton.icon(
+                onPressed: () => context.push('/payment/add-card'),
+                icon: const Icon(CupertinoIcons.add),
+                label: const Text('Add Card'),
+                style: OutlinedButton.styleFrom(
+                  minimumSize: const Size.fromHeight(52),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(17),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
               SoftCard(
                 color: AppColors.softBlue,
                 child: Row(
