@@ -1,5 +1,6 @@
 class Specialty {
   const Specialty(this.title, this.symbol);
+
   final String title;
   final String symbol;
 }
@@ -44,19 +45,20 @@ class Appointment {
 
 class Pharmacy {
   const Pharmacy(this.name, this.distance, this.rating);
+
   final String name;
   final String distance;
   final double rating;
 }
 
-abstract class HealthRepository {
+abstract interface class HealthDataSource {
   List<Specialty> get specialties;
   List<Doctor> get doctors;
   List<Appointment> get appointments;
   List<Pharmacy> get pharmacies;
 }
 
-class DemoHealthRepository implements HealthRepository {
+final class DemoHealthDataSource implements HealthDataSource {
   static const _specialties = <Specialty>[
     Specialty('Cardiology', '♡'),
     Specialty('Dermatology', '✦'),
@@ -141,4 +143,30 @@ class DemoHealthRepository implements HealthRepository {
 
   @override
   List<Specialty> get specialties => _specialties;
+}
+
+abstract interface class HealthRepository {
+  List<Specialty> get specialties;
+  List<Doctor> get doctors;
+  List<Appointment> get appointments;
+  List<Pharmacy> get pharmacies;
+}
+
+final class DemoHealthRepository implements HealthRepository {
+  DemoHealthRepository({HealthDataSource? dataSource})
+      : _dataSource = dataSource ?? DemoHealthDataSource();
+
+  final HealthDataSource _dataSource;
+
+  @override
+  List<Appointment> get appointments => _dataSource.appointments;
+
+  @override
+  List<Doctor> get doctors => _dataSource.doctors;
+
+  @override
+  List<Pharmacy> get pharmacies => _dataSource.pharmacies;
+
+  @override
+  List<Specialty> get specialties => _dataSource.specialties;
 }
