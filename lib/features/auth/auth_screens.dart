@@ -527,7 +527,7 @@ class SetPasswordScreen extends StatelessWidget {
             obscureText: true,
             decoration: InputDecoration(
               labelText: 'Confirm password',
-              prefixIcon: Icon(CupertinoIcons.lock_shield),
+              prefixIcon: Icon(CupertinoIcons.lock),
             ),
           ),
           const SizedBox(height: 30),
