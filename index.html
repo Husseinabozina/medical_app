@@ -3,172 +3,391 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0c3d46" />
-  <meta name="description" content="HealthTrack — a 61-screen Flutter health experience built from a Figma Community UI system with reusable architecture and connected product flows." />
-  <title>HealthTrack | Flutter Portfolio Showcase</title>
+  <meta name="theme-color" content="#061e25" />
+  <meta name="description" content="HealthTrack — 61-screen Flutter health app implementation from a Figma Community UI kit, with connected flows, clean architecture, automated tests and an Android showcase build." />
+  <title>HealthTrack · Flutter Product Showcase</title>
   <link rel="stylesheet" href="docs/styles.css" />
   <script src="docs/script.js" defer></script>
 </head>
 <body>
+  <div class="noise" aria-hidden="true"></div>
+
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="HealthTrack home">
-      <span class="brand-mark">+</span>
-      <span><strong>HealthTrack</strong><small>Flutter Portfolio</small></span>
+    <a class="brand" href="#top" aria-label="HealthTrack showcase home">
+      <span class="brand-mark" aria-hidden="true">
+        <i></i><b>+</b>
+      </span>
+      <span class="brand-copy">
+        <strong>HealthTrack</strong>
+        <small>Flutter Product Showcase</small>
+      </span>
     </a>
+
     <nav aria-label="Primary navigation">
-      <a href="#experience">Experience</a>
-      <a href="#screens">Screens</a>
+      <a href="#story">Product</a>
+      <a href="#figma">Live Figma</a>
       <a href="#engineering">Engineering</a>
-      <a href="#download">Download</a>
+      <a href="#download">APK</a>
     </nav>
-    <a class="header-cta" href="https://github.com/Husseinabozina/medical_app" target="_blank" rel="noopener noreferrer">View source</a>
+
+    <a class="header-cta" href="https://github.com/Husseinabozina/medical_app" target="_blank" rel="noopener noreferrer">
+      GitHub <span>↗</span>
+    </a>
   </header>
 
   <main id="top">
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="eyebrow"><span></span> FIGMA TO FLUTTER · 61 SCREENS</p>
-        <h1>A complete health experience, <em>engineered in Flutter.</em></h1>
+        <div class="eyebrow"><span></span> 61 SCREENS · FIGMA → FLUTTER</div>
+        <h1>
+          A healthcare UI kit turned into a
+          <em>connected Flutter product.</em>
+        </h1>
         <p class="hero-lead">
-          HealthTrack turns a full Figma Community UI system into a connected mobile product experience:
-          doctor discovery, booking, appointments, records, pharmacy, messaging, favorites and payment flows.
+          Doctor discovery, booking, appointments, medical records, pharmacy, messaging,
+          favorites and payment journeys — implemented as one coherent mobile experience.
         </p>
+
         <div class="hero-actions">
-          <a class="button primary" href="#screens">Explore the interface</a>
-          <a class="button secondary" href="#download">Download Android build</a>
+          <a class="button button-primary" href="#figma">Explore the real Figma screens</a>
+          <a class="button button-glass" href="https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk">
+            Download APK <span>↓</span>
+          </a>
         </div>
-        <div class="hero-proof">
-          <span><b>61</b> routed screens</span>
-          <span><b>Clean</b> architecture</span>
-          <span><b>CI</b> analyzed & tested</span>
+
+        <div class="proof-row" aria-label="Project highlights">
+          <div><b>61 / 61</b><span>source frames routed</span></div>
+          <div><b>8</b><span>specialty flows</span></div>
+          <div><b>Green CI</b><span>analyze + tests</span></div>
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Selected HealthTrack interface previews">
-        <div class="glow"></div>
-        <img class="hero-screen hero-screen-left" src="docs/assets/showcase/02-doctors.svg" alt="HealthTrack doctors showcase artwork" width="720" height="1280" />
-        <img class="hero-screen hero-screen-main" src="docs/assets/showcase/01-home.svg" alt="HealthTrack home showcase artwork" width="720" height="1280" fetchpriority="high" />
-        <img class="hero-screen hero-screen-right" src="docs/assets/showcase/04-schedule.svg" alt="HealthTrack appointment scheduling showcase artwork" width="720" height="1280" />
+      <div class="hero-stage" aria-label="HealthTrack product system map">
+        <div class="stage-glow"></div>
+        <div class="stage-ring ring-one"></div>
+        <div class="stage-ring ring-two"></div>
+        <div class="stage-core">
+          <div class="core-icon">+</div>
+          <strong>HealthTrack</strong>
+          <span>61-screen system</span>
+        </div>
+
+        <div class="orbit-card orbit-a">
+          <span class="orbit-index">01</span>
+          <b>Doctor discovery</b>
+          <small>specialties · search · profile</small>
+        </div>
+        <div class="orbit-card orbit-b">
+          <span class="orbit-index">02</span>
+          <b>Booking</b>
+          <small>schedule · payment · success</small>
+        </div>
+        <div class="orbit-card orbit-c">
+          <span class="orbit-index">03</span>
+          <b>Medical records</b>
+          <small>analysis · allergies · history</small>
+        </div>
+        <div class="orbit-card orbit-d">
+          <span class="orbit-index">04</span>
+          <b>Communication</b>
+          <small>messages · notifications</small>
+        </div>
+
+        <div class="floating-proof fp-one"><b>61</b><span>routes</span></div>
+        <div class="floating-proof fp-two"><b>CI</b><span>passed</span></div>
       </div>
     </section>
 
-    <section class="metric-band">
-      <div class="shell metric-grid">
-        <div><strong>61 / 61</strong><span>top-level Figma frames represented</span></div>
-        <div><strong>8</strong><span>specialty doctor journeys</span></div>
-        <div><strong>1</strong><span>replaceable repository/data-source boundary</span></div>
-        <div><strong>Green CI</strong><span>Flutter analyze + automated tests</span></div>
+    <section class="signal-strip" aria-label="Technology and experience highlights">
+      <div class="signal-track">
+        <span>FLUTTER</span><i></i>
+        <span>CLEAN ARCHITECTURE</span><i></i>
+        <span>GO_ROUTER</span><i></i>
+        <span>BLOC / CUBIT</span><i></i>
+        <span>61 ROUTES</span><i></i>
+        <span>FIGMA-DRIVEN UI</span><i></i>
+        <span>ANDROID SHOWCASE BUILD</span><i></i>
+        <span>FLUTTER</span><i></i>
+        <span>CLEAN ARCHITECTURE</span>
       </div>
     </section>
 
-    <section class="section shell" id="experience">
-      <div class="section-heading">
-        <p class="eyebrow"><span></span> PRODUCT EXPERIENCE</p>
-        <h2>From discovery to follow-up, the flow stays connected.</h2>
+    <section class="section shell" id="story">
+      <div class="section-heading split-heading">
+        <div>
+          <div class="eyebrow"><span></span> PRODUCT STORY</div>
+          <h2>Not sixty-one disconnected screens.</h2>
+        </div>
         <p>
-          The implementation is not a collection of disconnected mock screens. Navigation, shared state,
-          reusable components and session data connect the core journeys into one coherent app.
+          The source kit was translated into reusable UI primitives, route families and connected flows.
+          The result behaves like a product showcase rather than a screenshot catalogue.
         </p>
       </div>
 
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span class="feature-icon">01</span>
-          <h3>Discover doctors</h3>
-          <p>Browse specialties, filter doctors, open profiles, review ratings and save favorites.</p>
+      <div class="journey-grid">
+        <article class="journey-card journey-card-wide">
+          <div class="journey-top">
+            <span class="journey-number">01</span>
+            <span class="journey-label">DISCOVER</span>
+          </div>
+          <h3>Find the right doctor</h3>
+          <p>Home → Specialties → Doctor list → Info → Full profile.</p>
+          <div class="mini-flow">
+            <span>Home</span><i>→</i><span>Specialties</span><i>→</i><span>Doctors</span><i>→</i><span>Profile</span>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon">02</span>
-          <h3>Book appointments</h3>
-          <p>Select dates and time slots, review details, choose a payment method and track appointment states.</p>
+
+        <article class="journey-card accent-card">
+          <div class="journey-top">
+            <span class="journey-number">02</span>
+            <span class="journey-label">BOOK</span>
+          </div>
+          <h3>Schedule care</h3>
+          <p>Date, time, payment method and appointment states are part of one path.</p>
+          <div class="pulse-line"><span></span><i></i><span></span><i></i><span></span></div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon">03</span>
-          <h3>Health records</h3>
-          <p>Navigate allergies, analysis, vaccinations and medical history inside a dedicated record experience.</p>
+
+        <article class="journey-card">
+          <div class="journey-top">
+            <span class="journey-number">03</span>
+            <span class="journey-label">TRACK</span>
+          </div>
+          <h3>Keep health information organized</h3>
+          <p>Medical record, allergies, analysis, vaccinations and history live under one system.</p>
+          <div class="record-stack">
+            <span>Analysis</span><span>Allergies</span><span>Vaccinations</span><span>History</span>
+          </div>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon">04</span>
-          <h3>Messaging & pharmacy</h3>
-          <p>Send session-persistent messages and move through pharmacy discovery, filtering and detail screens.</p>
+
+        <article class="journey-card">
+          <div class="journey-top">
+            <span class="journey-number">04</span>
+            <span class="journey-label">FOLLOW UP</span>
+          </div>
+          <h3>Continue the journey</h3>
+          <p>Favorites, messages, pharmacy, profile and notifications keep the experience connected.</p>
+          <div class="bubble-stack">
+            <span>Message</span><span>Favorite</span><span>Pharmacy</span>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="screens-section" id="screens">
+    <section class="figma-section" id="figma">
       <div class="shell">
-        <div class="section-heading centered">
-          <p class="eyebrow"><span></span> SELECTED INTERFACE VIEWS</p>
-          <h2>Six moments from a 61-screen implementation.</h2>
-          <p>Lightweight showcase artwork presents the implemented Figma-based journeys without shipping multi-megabyte screenshots.</p>
+        <div class="section-heading centered light-heading">
+          <div class="eyebrow"><span></span> LIVE FIGMA SOURCE VIEWER</div>
+          <h2>The screens below come directly from the Figma source.</h2>
+          <p>
+            Pick a screen and the viewer loads that exact frame from Figma. This is the design source used for the Flutter implementation — not a recreated marketing mockup.
+          </p>
         </div>
-        <div class="screen-grid">
-          <figure><img src="docs/assets/showcase/01-home.svg" alt="Home screen showcase" loading="lazy" width="720" height="1280" /><figcaption><b>Home</b><span>Quick access and upcoming care</span></figcaption></figure>
-          <figure><img src="docs/assets/showcase/02-doctors.svg" alt="Doctors screen showcase" loading="lazy" width="720" height="1280" /><figcaption><b>Doctors</b><span>Discovery, search and favorites</span></figcaption></figure>
-          <figure><img src="docs/assets/showcase/03-profile.svg" alt="Doctor profile screen showcase" loading="lazy" width="720" height="1280" /><figcaption><b>Doctor profile</b><span>Details before booking</span></figcaption></figure>
-          <figure><img src="docs/assets/showcase/04-schedule.svg" alt="Schedule screen showcase" loading="lazy" width="720" height="1280" /><figcaption><b>Schedule</b><span>Date and time selection</span></figcaption></figure>
-          <figure><img src="docs/assets/showcase/05-record.svg" alt="Medical record screen showcase" loading="lazy" width="720" height="1280" /><figcaption><b>Medical record</b><span>History, analysis and vaccinations</span></figcaption></figure>
-          <figure><img src="docs/assets/showcase/06-payment.svg" alt="Payment flow screen showcase" loading="lazy" width="720" height="1280" /><figcaption><b>Payment flow</b><span>Method, summary and confirmation</span></figcaption></figure>
+
+        <div class="figma-explorer">
+          <aside class="screen-selector" aria-label="Choose a Figma screen">
+            <button class="screen-tab is-active" data-screen="home">
+              <span>01</span><b>Home</b><small>2213:326</small>
+            </button>
+            <button class="screen-tab" data-screen="specialties">
+              <span>02</span><b>Specialties</b><small>2068:756</small>
+            </button>
+            <button class="screen-tab" data-screen="doctors">
+              <span>03</span><b>Doctors</b><small>2068:376</small>
+            </button>
+            <button class="screen-tab" data-screen="profile">
+              <span>04</span><b>Doctor profile</b><small>2097:1242</small>
+            </button>
+            <button class="screen-tab" data-screen="schedule">
+              <span>05</span><b>Schedule</b><small>2088:1073</small>
+            </button>
+            <button class="screen-tab" data-screen="appointment">
+              <span>06</span><b>Appointment</b><small>2088:1187</small>
+            </button>
+            <button class="screen-tab" data-screen="record">
+              <span>07</span><b>Medical record</b><small>2110:221</small>
+            </button>
+            <button class="screen-tab" data-screen="payment">
+              <span>08</span><b>Payment summary</b><small>2128:1624</small>
+            </button>
+          </aside>
+
+          <div class="figma-device-wrap">
+            <div class="device-shadow"></div>
+            <div class="figma-device">
+              <div class="device-top"><span></span></div>
+              <div class="figma-loading" id="figma-loading">
+                <span></span><span></span><span></span>
+                <p>Loading the Figma frame…</p>
+              </div>
+              <iframe
+                id="figma-frame"
+                title="Live Figma HealthTrack screen"
+                src="https://embed.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?embed-host=healthtrack-showcase&node-id=2213-326&footer=false&page-selector=false&viewport-controls=false&theme=light"
+                loading="lazy"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="screen-notes">
+            <span class="live-chip"><i></i> LIVE FIGMA FRAME</span>
+            <div class="screen-count"><b id="screen-number">01</b><span>/ 08 selected</span></div>
+            <h3 id="screen-title">Home</h3>
+            <p id="screen-copy">The main HealthTrack entry point with quick access, upcoming care and doctor discovery.</p>
+            <div class="screen-meta">
+              <span><small>Figma node</small><b id="screen-node">2213:326</b></span>
+              <span><small>Implementation</small><b>Flutter route</b></span>
+            </div>
+            <a id="figma-link" class="inline-link" href="https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2213-326&m=dev" target="_blank" rel="noopener noreferrer">
+              Open this frame in Figma <span>↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section engineering" id="engineering">
-      <div class="shell engineering-grid">
-        <div>
-          <p class="eyebrow"><span></span> ENGINEERING</p>
-          <h2>Portfolio polish with a backend-ready boundary.</h2>
-          <p class="engineering-lead">
-            The UI depends on repository contracts rather than a hard-coded service implementation.
-            The downloadable portfolio build uses a local demo data source for deterministic testing,
-            while the same boundary is ready for a REST or Firebase adapter.
-          </p>
-          <div class="architecture-line">
-            <span>Screen / Cubit</span><i>→</i><span>HealthRepository</span><i>→</i><span>HealthDataSource</span>
+    <section class="section shell">
+      <div class="section-heading">
+        <div class="eyebrow"><span></span> COVERAGE</div>
+        <h2>One codebase, multiple product surfaces.</h2>
+        <p>The implementation reuses patterns where the source design repeats them, while every mapped source frame keeps a distinct route.</p>
+      </div>
+
+      <div class="coverage-grid">
+        <article class="coverage-card big-card">
+          <span class="coverage-kicker">CORE EXPERIENCE</span>
+          <strong>61</strong>
+          <h3>mapped application screens</h3>
+          <p>From onboarding through payment success, every top-level HealthTrack frame has a Flutter destination.</p>
+          <div class="coverage-bars"><span style="--w:100%"></span><span style="--w:82%"></span><span style="--w:64%"></span></div>
+        </article>
+        <article class="coverage-card">
+          <span class="coverage-kicker">DISCOVERY</span>
+          <strong>8</strong>
+          <h3>medical specialties</h3>
+          <p>Cardiology, dermatology, general medicine, gynecology, odontology, oncology, ophthalmology and orthopedics.</p>
+        </article>
+        <article class="coverage-card">
+          <span class="coverage-kicker">RECORDS</span>
+          <strong>8</strong>
+          <h3>record-focused screens</h3>
+          <p>Add record, record menu, allergies, analysis, detail, vaccinations and medical history flows.</p>
+        </article>
+        <article class="coverage-card wide-card">
+          <span class="coverage-kicker">INTERACTION</span>
+          <h3>Favorites · messaging · profile · pharmacy · appointment states</h3>
+          <p>State changes are not decorative. The showcase build preserves relevant mutations during the app session.</p>
+          <div class="interaction-chips"><span>Favorites</span><span>Messages</span><span>Cancel / Re-book</span><span>Cards</span><span>Profile</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="engineering-section" id="engineering">
+      <div class="shell">
+        <div class="section-heading centered light-heading">
+          <div class="eyebrow"><span></span> UNDER THE HOOD</div>
+          <h2>Built so the backend can change without rebuilding the UI.</h2>
+          <p>The current downloadable showcase uses a local data adapter. The screen layer talks to contracts, not to that adapter directly.</p>
+        </div>
+
+        <div class="architecture-stage">
+          <div class="architecture-node">
+            <span>01</span><b>Screen / Cubit</b><small>presentation & user state</small>
+          </div>
+          <div class="architecture-arrow"><i></i><b>→</b></div>
+          <div class="architecture-node">
+            <span>02</span><b>HealthRepository</b><small>domain boundary</small>
+          </div>
+          <div class="architecture-arrow"><i></i><b>→</b></div>
+          <div class="architecture-node">
+            <span>03</span><b>HealthDataSource</b><small>replaceable source</small>
+          </div>
+          <div class="architecture-arrow"><i></i><b>→</b></div>
+          <div class="architecture-node architecture-node-accent">
+            <span>04</span><b>Backend adapter</b><small>local showcase / REST / Firebase</small>
           </div>
         </div>
 
-        <div class="engineering-card">
-          <h3>What is implemented</h3>
-          <ul>
-            <li>Reusable design system and motion tokens</li>
-            <li>61 distinct application routes</li>
-            <li>Favorites and booking state management</li>
-            <li>Mutable demo session for messages, appointments, records, cards and profile</li>
-            <li>Reliable back-navigation fallbacks across root and nested flows</li>
-            <li>Widget, navigation, route-catalog and data-layer tests</li>
-            <li>GitHub Actions for <code>flutter analyze</code> and <code>flutter test</code></li>
-          </ul>
+        <div class="engineering-bento">
+          <article>
+            <span class="bento-icon">↩</span>
+            <h3>Navigation hardened</h3>
+            <p>Root and nested flows use deterministic back fallbacks instead of silently failing when there is no pop history.</p>
+          </article>
+          <article>
+            <span class="bento-icon">✓</span>
+            <h3>Regression-tested</h3>
+            <p>Route catalog, data mutations, navigation contracts and the Favorites → Back regression are covered by tests.</p>
+          </article>
+          <article>
+            <span class="bento-icon">⌁</span>
+            <h3>Calm motion language</h3>
+            <p>Short fades, slides and state transitions support the medical visual tone instead of competing with it.</p>
+          </article>
+          <article>
+            <span class="bento-icon">CI</span>
+            <h3>Automated quality gate</h3>
+            <p>GitHub Actions runs Flutter analysis and automated tests on the repository.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="download-section" id="download">
-      <div class="shell download-grid">
-        <div class="download-art" aria-hidden="true">
-          <span class="orbit orbit-a"></span><span class="orbit orbit-b"></span><b>+</b>
+      <div class="shell download-shell">
+        <div class="download-visual" aria-hidden="true">
+          <div class="download-disc disc-one"></div>
+          <div class="download-disc disc-two"></div>
+          <div class="download-symbol">↓</div>
+          <span class="download-badge">ANDROID</span>
         </div>
-        <div>
-          <p class="eyebrow"><span></span> ANDROID SHOWCASE BUILD</p>
-          <h2>Try HealthTrack on an Android device.</h2>
+
+        <div class="download-copy">
+          <div class="eyebrow"><span></span> INSTALLABLE SHOWCASE</div>
+          <h2>Run the project on an Android device.</h2>
           <p>
-            The APK is built from the same repository in portfolio mode. It demonstrates the connected
-            app experience with local session data and does not claim live healthcare, payment processing or production medical services.
+            The release APK is built from this repository and demonstrates the implemented app journeys with local session data.
           </p>
+          <div class="download-meta">
+            <span><small>Build</small><b>Release APK</b></span>
+            <span><small>Size</small><b>≈ 51 MB</b></span>
+            <span><small>Mode</small><b>Portfolio data adapter</b></span>
+          </div>
         </div>
+
         <div class="download-actions">
-          <a class="button download-button" href="https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk">Download APK <span>↓</span></a>
-          <a class="text-link" href="https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2279-1229&m=dev" target="_blank" rel="noopener noreferrer">View Figma reference ↗</a>
+          <a class="button download-button" href="https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk">
+            Download healthtrack-demo.apk <span>↓</span>
+          </a>
+          <a class="release-link" href="https://github.com/Husseinabozina/medical_app/releases/tag/showcase-latest" target="_blank" rel="noopener noreferrer">
+            View release details ↗
+          </a>
         </div>
+      </div>
+    </section>
+
+    <section class="truth-strip">
+      <div class="shell">
+        <b>Portfolio scope</b>
+        <p>
+          This project demonstrates the implemented mobile product experience. The downloadable build does not claim live healthcare providers,
+          real patient records, real doctor availability or production payment processing.
+        </p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="shell footer-inner">
-      <div class="brand footer-brand"><span class="brand-mark">+</span><span><strong>HealthTrack</strong><small>Flutter Portfolio</small></span></div>
-      <p>Flutter implementation and engineering showcase by Hussein Abozina.</p>
-      <a href="https://github.com/Husseinabozina/medical_app" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark"><i></i><b>+</b></span>
+        <span class="brand-copy"><strong>HealthTrack</strong><small>Flutter Product Showcase</small></span>
+      </a>
+      <p>Flutter implementation & engineering showcase by Hussein Abozina.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Husseinabozina/medical_app" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="#figma">Figma viewer ↑</a>
+      </div>
     </div>
   </footer>
 </body>
