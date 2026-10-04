@@ -12,6 +12,10 @@ class PaymentMethodScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cards = context.read<HealthRepository>().paymentCards;
+    final cardSubtitle =
+        cards.isEmpty ? 'No saved card' : '•••• ${cards.last.last4}';
+
     return HealthScaffold(
       title: 'Payment method',
       showBack: true,
@@ -30,7 +34,7 @@ class PaymentMethodScreen extends StatelessWidget {
               _PaymentChoice(
                 icon: CupertinoIcons.creditcard,
                 title: 'Credit / Debit card',
-                subtitle: '•••• 4242',
+                subtitle: cardSubtitle,
                 selected: state.paymentMethod == 'Card',
                 onTap: () =>
                     context.read<BookingCubit>().selectPayment('Card'),
