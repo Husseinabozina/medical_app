@@ -123,9 +123,10 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const _SectionHeader(
+                        _SectionHeader(
                           title: 'Quick access',
                           action: 'View all',
+                          onActionTap: () => context.push('/specialties'),
                         ),
                         const SizedBox(height: 14),
                         GridView.count(
@@ -159,9 +160,11 @@ class HomeScreen extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 28),
-                        const _SectionHeader(
+                        _SectionHeader(
                           title: 'Upcoming appointment',
                           action: 'Details',
+                          onActionTap: () =>
+                              context.push('/appointments/details'),
                         ),
                         const SizedBox(height: 14),
                         SoftCard(
@@ -216,9 +219,10 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 28),
-                        const _SectionHeader(
+                        _SectionHeader(
                           title: 'Recommended doctors',
                           action: 'See all',
+                          onActionTap: () => context.push('/doctors'),
                         ),
                         const SizedBox(height: 14),
                         SizedBox(
@@ -755,10 +759,15 @@ class _HeaderIcon extends StatelessWidget {
 }
 
 class _SectionHeader extends StatelessWidget {
-  const _SectionHeader({required this.title, required this.action});
+  const _SectionHeader({
+    required this.title,
+    required this.action,
+    this.onActionTap,
+  });
 
   final String title;
   final String action;
+  final VoidCallback? onActionTap;
 
   @override
   Widget build(BuildContext context) {
@@ -772,11 +781,18 @@ class _SectionHeader extends StatelessWidget {
                 ),
           ),
         ),
-        Text(
-          action,
-          style: const TextStyle(
-            color: AppColors.primary,
-            fontWeight: FontWeight.w700,
+        TextButton(
+          onPressed: onActionTap,
+          style: TextButton.styleFrom(
+            foregroundColor: AppColors.primary,
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: 8,
+              vertical: 6,
+            ),
+          ),
+          child: Text(
+            action,
+            style: const TextStyle(fontWeight: FontWeight.w700),
           ),
         ),
       ],
