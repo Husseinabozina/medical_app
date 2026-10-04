@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/design_system.dart';
-import '../../core/health_domain.dart';
 import '../../core/health_state.dart';
 
 class _SourceFrameScaffold extends StatelessWidget {
@@ -12,19 +11,16 @@ class _SourceFrameScaffold extends StatelessWidget {
     required this.title,
     required this.child,
     this.actions = const [],
-    this.bottom,
   });
 
   final String title;
   final Widget child;
   final List<Widget> actions;
-  final Widget? bottom;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      bottomNavigationBar: bottom,
       body: SafeArea(
         child: Center(
           child: ConstrainedBox(
@@ -335,7 +331,7 @@ class _MedicalRecordAddScreenState extends State<MedicalRecordAddScreen> {
           const _SectionLabel('What is your blood type'),
           const SizedBox(height: 12),
           DropdownButtonFormField<String>(
-            value: bloodType,
+            initialValue: bloodType,
             items: const [
               DropdownMenuItem(value: 'A +', child: Text('A +')),
               DropdownMenuItem(value: 'A -', child: Text('A -')),
@@ -863,7 +859,7 @@ class MedicalHistoryScreen extends StatelessWidget {
                   value: '24 / 01 / 2026',
                 ),
                 _InfoRow(
-                  icon: CupertinoIcons.pills,
+                  icon: CupertinoIcons.heart,
                   title: 'Treatment Plan',
                   value: '5mg Morning · 15mg Night',
                 ),
@@ -988,7 +984,7 @@ class PharmacyDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _SourceFrameScaffold(
+    return const _SourceFrameScaffold(
       title: 'MediCure Pharmacy',
       child: Column(
         children: [
@@ -1151,7 +1147,7 @@ class _PharmacyResult extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Distance: ' + distance,
+                  'Distance: $distance',
                   style: const TextStyle(color: AppColors.primary, fontSize: 12),
                 ),
               ],
@@ -1195,7 +1191,7 @@ class _UsageBar extends StatelessWidget {
           ),
           const SizedBox(width: 10),
           Text(
-            (value * 100).round().toString() + '%',
+            '${(value * 100).round()}%',
             style: const TextStyle(fontWeight: FontWeight.w800),
           ),
         ],
@@ -1220,7 +1216,7 @@ class AppointmentCompleteScreen extends StatelessWidget {
       title: 'Complete',
       child: Column(
         children: [
-          _AppointmentStatusNav(selected: 'Complete'),
+          const _AppointmentStatusNav(selected: 'Complete'),
           const SizedBox(height: 18),
           for (var i = 0; i < completed.length; i++)
             Padding(
@@ -1279,7 +1275,7 @@ class AppointmentCancelledScreen extends StatelessWidget {
       title: 'Cancelled',
       child: Column(
         children: [
-          _AppointmentStatusNav(selected: 'Cancelled'),
+          const _AppointmentStatusNav(selected: 'Cancelled'),
           const SizedBox(height: 18),
           for (var i = 0; i < cancelled.length; i++)
             Padding(
@@ -1365,16 +1361,18 @@ class _CancelAppointmentScreenState extends State<CancelAppointmentScreen> {
         children: [
           const _SectionLabel('Choose a reason'),
           const SizedBox(height: 12),
-          for (final item in reasons)
-            RadioListTile<String>(
-              value: item,
-              groupValue: reason,
-              title: Text(item),
-              contentPadding: EdgeInsets.zero,
-              onChanged: (value) {
-                if (value != null) setState(() => reason = value);
-              },
-            ),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final item in reasons)
+                ChoiceChip(
+                  label: Text(item),
+                  selected: reason == item,
+                  onSelected: (_) => setState(() => reason = item),
+                ),
+            ],
+          ),
           const SizedBox(height: 12),
           TextField(
             controller: notes,
