@@ -147,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                               onTap: () => context.push('/specialties'),
                             ),
                             _QuickAction(
-                              icon: CupertinoIcons.bandage,
+                              icon: CupertinoIcons.add_circled,
                               label: 'Pharmacy',
                               onTap: () => context.push('/pharmacy'),
                             ),
