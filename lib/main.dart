@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app/health_track_app.dart';
+import 'core/app_environment.dart';
 import 'core/health_domain.dart';
 import 'core/health_state.dart';
+import 'data/backend_factory.dart';
 import 'data/health_repository_impl.dart';
-import 'data/mock/mock_health_data_source.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +14,7 @@ void main() {
   runApp(
     RepositoryProvider<HealthRepository>(
       create: (_) => HealthRepositoryImpl(
-        dataSource: MockHealthDataSource(),
+        dataSource: HealthBackendFactory.create(AppEnvironment.backendMode),
       ),
       child: MultiBlocProvider(
         providers: [
