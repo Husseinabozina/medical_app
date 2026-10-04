@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061F26"/><stop offset=".55" stop-color="#0B3D46"/><stop offset="1" stop-color="#0A7681"/></linearGradient>
+  <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#37E5D6"/><stop offset="1" stop-color="#10BDD2"/></linearGradient>
+  <filter id="s"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#001014" flood-opacity=".42"/></filter>
+</defs>
+<rect width="1200" height="620" rx="30" fill="url(#bg)"/>
+<circle cx="1040" cy="80" r="250" fill="#48E8DC" opacity=".08"/><circle cx="160" cy="590" r="280" fill="#18C5D4" opacity=".08"/>
+<g transform="translate(70 90)">
+  <rect width="90" height="8" rx="4" fill="#3BE4D7"/>
+  <text y="62" font-family="Arial,sans-serif" font-size="56" font-weight="800" fill="#FFFFFF">HealthTrack</text>
+  <text y="105" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="#8FECE8">61-screen Flutter health experience</text>
+  <text y="158" font-family="Arial,sans-serif" font-size="18" fill="#C3DADD">Figma-to-Flutter implementation with a reusable design system,</text>
+  <text y="187" font-family="Arial,sans-serif" font-size="18" fill="#C3DADD">connected product flows and a swappable data architecture.</text>
+  <g transform="translate(0 245)">
+    <rect width="154" height="42" rx="21" fill="#FFFFFF" opacity=".08" stroke="#78E9E2" stroke-opacity=".32"/>
+    <text x="77" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#E9FFFF">FLUTTER</text>
+    <rect x="168" width="186" height="42" rx="21" fill="#FFFFFF" opacity=".08" stroke="#78E9E2" stroke-opacity=".32"/>
+    <text x="261" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#E9FFFF">CLEAN ARCHITECTURE</text>
+    <rect x="368" width="140" height="42" rx="21" fill="#FFFFFF" opacity=".08" stroke="#78E9E2" stroke-opacity=".32"/>
+    <text x="438" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#E9FFFF">61 ROUTES</text>
+  </g>
+  <text y="358" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#79DCD9">PORTFOLIO SHOWCASE • ANDROID DEMO BUILD</text>
+</g>
+<g transform="translate(655 52)" filter="url(#s)">
+  <g transform="rotate(-8 150 255)">
+    <rect x="0" y="30" width="250" height="510" rx="38" fill="#07161A"/>
+    <rect x="10" y="40" width="230" height="490" rx="30" fill="#FFFFFF"/>
+    <rect x="10" y="75" width="230" height="112" fill="url(#a)"/>
+    <rect x="70" y="49" width="110" height="18" rx="9" fill="#07161A"/>
+    <rect x="30" y="216" width="190" height="72" rx="18" fill="#F0FBFC"/>
+    <rect x="30" y="306" width="88" height="96" rx="18" fill="#E8F9FA"/>
+    <rect x="132" y="306" width="88" height="96" rx="18" fill="#F2FBFC"/>
+    <rect x="30" y="421" width="190" height="72" rx="18" fill="#F6FAFB"/>
+  </g>
+  <g transform="translate(205 26) rotate(5 150 255)">
+    <rect x="0" y="30" width="250" height="510" rx="38" fill="#07161A"/>
+    <rect x="10" y="40" width="230" height="490" rx="30" fill="#FFFFFF"/>
+    <rect x="10" y="75" width="230" height="112" fill="url(#a)"/>
+    <rect x="70" y="49" width="110" height="18" rx="9" fill="#07161A"/>
+    <circle cx="57" cy="236" r="26" fill="#DDF7F8"/>
+    <rect x="94" y="218" width="110" height="12" rx="6" fill="#19373D"/>
+    <rect x="94" y="240" width="82" height="9" rx="4.5" fill="#8AA2A5"/>
+    <rect x="30" y="288" width="190" height="64" rx="18" fill="#F5FAFB"/>
+    <rect x="30" y="372" width="190" height="64" rx="18" fill="#F5FAFB"/>
+    <rect x="30" y="456" width="190" height="44" rx="16" fill="url(#a)"/>
+  </g>
+</g>
+</svg>
