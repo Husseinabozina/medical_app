@@ -1,118 +1,157 @@
 <div align="center">
-  <a href="https://husseinabozina.github.io/medical_app/">
-    <img src="docs/assets/readme-cover.svg" alt="HealthTrack Flutter portfolio showcase" width="1200" />
-  </a>
 
-  <h1>HealthTrack · Flutter Health Experience</h1>
+# HealthTrack
 
-  <p><strong>61-screen Figma-to-Flutter implementation with connected flows, reusable architecture, automated tests and an installable Android showcase build.</strong></p>
+### 61-screen Flutter product implementation from a Figma Community healthcare UI system
 
-  <p>
-    <a href="https://husseinabozina.github.io/medical_app/"><strong>Open live showcase</strong></a>
-    ·
-    <a href="https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk"><strong>Download APK</strong></a>
-    ·
-    <a href="https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2279-1229&m=dev">Figma reference</a>
-  </p>
+[![Flutter CI](https://github.com/Husseinabozina/medical_app/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/Husseinabozina/medical_app/actions/workflows/flutter_ci.yml)
+[![Android Showcase](https://github.com/Husseinabozina/medical_app/actions/workflows/publish_showcase_apk.yml/badge.svg)](https://github.com/Husseinabozina/medical_app/actions/workflows/publish_showcase_apk.yml)
+![Flutter](https://img.shields.io/badge/Flutter-Product%20Implementation-02569B?logo=flutter&logoColor=white)
+![Screens](https://img.shields.io/badge/Figma%20Frames-61%2F61-0AA0AF)
+![Architecture](https://img.shields.io/badge/Architecture-Repository%20%2B%20DataSource-103C44)
 
-  <p>
-    <img src="https://img.shields.io/badge/Flutter-mobile-02569B?logo=flutter&logoColor=white" alt="Flutter" />
-    <img src="https://img.shields.io/badge/Screens-61%2F61-0EA5B4" alt="61 screens" />
-    <img src="https://img.shields.io/badge/Architecture-Repository%20%2B%20DataSource-173D45" alt="Architecture" />
-    <img src="https://img.shields.io/badge/CI-analyze%20%2B%20test-16A085" alt="CI" />
-  </p>
+**[Open the live portfolio](https://husseinabozina.github.io/medical_app/)** ·
+**[Download Android APK](https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk)** ·
+**[Open the Figma source](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2279-1229&m=dev)**
+
 </div>
 
 ---
 
-## Overview
+## Product at a glance
 
-**HealthTrack** is a complete Flutter implementation of a Figma Community healthcare UI system. The project turns the source design into a connected app experience rather than a set of isolated screens.
+<table>
+<tr>
+<td width="25%" align="center"><h2>61 / 61</h2><sub>top-level Figma frames mapped to Flutter routes</sub></td>
+<td width="25%" align="center"><h2>8</h2><sub>medical specialty doctor flows</sub></td>
+<td width="25%" align="center"><h2>1</h2><sub>replaceable repository/data-source boundary</sub></td>
+<td width="25%" align="center"><h2>CI ✓</h2><sub>Flutter analyze + automated tests</sub></td>
+</tr>
+</table>
 
-The implementation covers doctor discovery, specialties, favorites, doctor profiles, booking, appointment states, messaging, pharmacy flows, medical records, profile/settings/help and payment UX.
+HealthTrack is a **complete Flutter implementation** of a public Figma Community medical UI kit. The project focuses on translating the visual system into reusable Flutter code, connecting the source frames into coherent product journeys, and keeping the presentation layer independent from the concrete data source.
 
-My focus in this project is **Flutter engineering and product implementation**: translating the design system into reusable code, connecting the journeys, hardening navigation, shaping a replaceable data boundary and keeping the project testable.
+The original Figma Community file is the **design reference**. This repository represents my Flutter implementation and engineering work; it does not claim authorship of the source UI kit.
 
-> The Figma Community file is the visual reference. This repository contains the Flutter implementation and engineering work; it does not claim authorship of the original UI kit.
+## Live Figma screen explorer
 
-## Selected showcase artwork
+GitHub README files cannot embed the interactive Figma canvas safely, so the portfolio site contains a **live Figma source viewer**. Select a screen there and it loads the exact source node directly from Figma — not a recreated marketing screenshot.
 
-The portfolio site uses lightweight SVG showcase artwork instead of multi-megabyte PNG captures, keeping GitHub Pages fast while preserving the visual character of the implemented flows.
+| Source frame | Figma node | Open |
+|---|---:|---|
+| **Home** | `2213:326` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2213-326&m=dev) |
+| **Specialties** | `2068:756` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2068-756&m=dev) |
+| **Doctors** | `2068:376` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2068-376&m=dev) |
+| **Doctor profile** | `2097:1242` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2097-1242&m=dev) |
+| **Schedule** | `2088:1073` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2088-1073&m=dev) |
+| **Appointment details** | `2088:1187` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2088-1187&m=dev) |
+| **Medical record** | `2110:221` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2110-221&m=dev) |
+| **Payment summary** | `2128:1624` | [Open frame ↗](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2128-1624&m=dev) |
 
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="docs/assets/showcase/01-home.svg" alt="HealthTrack home showcase" width="180" /></td>
-      <td><img src="docs/assets/showcase/02-doctors.svg" alt="Doctors showcase" width="180" /></td>
-      <td><img src="docs/assets/showcase/03-profile.svg" alt="Doctor profile showcase" width="180" /></td>
-    </tr>
-    <tr>
-      <td><img src="docs/assets/showcase/04-schedule.svg" alt="Schedule showcase" width="180" /></td>
-      <td><img src="docs/assets/showcase/05-record.svg" alt="Medical record showcase" width="180" /></td>
-      <td><img src="docs/assets/showcase/06-payment.svg" alt="Payment flow showcase" width="180" /></td>
-    </tr>
-  </table>
-</div>
+> **[Open the interactive viewer →](https://husseinabozina.github.io/medical_app/#figma)**
 
-## Product coverage
+## The connected product journey
 
-- **61 / 61** top-level Figma frames represented as Flutter routes.
-- All **8 specialty** doctor-list variants.
-- Favorites, rating and female/male/service variants.
-- Profile, settings, password, privacy, FAQ/contact and logout flows.
-- Upcoming, completed, cancelled and cancellation appointment states.
-- Pharmacy discovery, filters and details.
-- Medical record, allergies, analysis/detail, vaccinations and history.
-- Payment method, add-card, summary and success flows.
-- Reliable back-navigation fallbacks across bottom-navigation and nested flows.
+```mermaid
+flowchart LR
+    A[Home] --> B[Specialties]
+    B --> C[Doctor lists]
+    C --> D[Doctor info]
+    D --> E[Doctor profile]
+    E --> F[Schedule]
+    F --> G[Payment method]
+    G --> H[Payment summary]
+    H --> I[Success]
+    I --> J[Appointment details]
 
-## Architecture
-
-```text
-Screen / Cubit
-      ↓
-HealthRepository
-      ↓
-HealthDataSource
-      ↓
-MockHealthDataSource     ← current showcase adapter
-REST / Firebase adapter  ← replaceable future adapter
+    A --> K[Favorites]
+    A --> L[Pharmacy]
+    A --> M[Medical record]
+    D --> N[Messages]
+    J --> O[Cancel / Review]
 ```
 
-The downloadable showcase build uses a deterministic **local demo data source** with short simulated latency. It supports session mutations for:
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### Discover & book
+- 8 specialty doctor variants
+- doctor search and filtering
+- doctor info and profile
+- date and time selection
+- payment method, add-card, summary and success
+
+</td>
+<td width="50%" valign="top">
+
+### Continue & manage
+- favorites and rating variants
+- complete / upcoming / cancelled appointments
+- messaging and notifications
+- pharmacy filter and details
+- medical records, analysis, allergies and vaccinations
+
+</td>
+</tr>
+</table>
+
+## Engineering architecture
+
+```mermaid
+flowchart LR
+    UI["Screen / Cubit"] --> REPO["HealthRepository"]
+    REPO --> DS["HealthDataSource"]
+    DS --> LOCAL["Showcase data adapter"]
+    DS -. replaceable .-> REST["REST / Firebase adapter"]
+```
+
+The important boundary is that screens do **not** know which concrete data source is behind the repository.
+
+The current showcase build uses a deterministic local adapter with short simulated latency. During the running session it supports state changes for:
 
 - favorites;
 - outgoing messages;
 - appointment cancellation and re-booking;
-- medical-record additions;
+- medical record additions;
 - saved payment cards;
 - profile updates.
 
-The domain/UI layers depend on repository contracts, so replacing the local adapter with a real API does not require rebuilding the screen layer.
+That adapter can be replaced later without rewriting the screen layer.
 
-## Engineering highlights
+## Quality gates
 
-- reusable Figma-derived design tokens and components;
-- pragmatic Clean Architecture without ceremonial layers;
-- feature-focused screen organization;
-- `go_router` route catalog with 61 unique routes;
-- Cubit state for favorites and booking selections;
-- deterministic back-navigation fallbacks;
-- widget and data-layer regression tests;
-- GitHub Actions running `flutter analyze` and `flutter test`;
-- dedicated Android showcase release workflow.
+<table>
+<tr>
+<td width="25%" align="center"><b>Route catalog</b><br/><sub>61 unique routes locked by test</sub></td>
+<td width="25%" align="center"><b>Navigation</b><br/><sub>back-fallback regression coverage</sub></td>
+<td width="25%" align="center"><b>Data layer</b><br/><sub>session mutations covered</sub></td>
+<td width="25%" align="center"><b>CI</b><br/><sub>analyze + test on GitHub Actions</sub></td>
+</tr>
+</table>
 
-## Android showcase build
+Notable regression coverage includes the bottom-navigation **Favorites → Back → Home** case that previously failed when there was no Navigator pop history.
 
-The repository publishes an installable Android APK through GitHub Releases:
+## Android showcase
 
-**[Download healthtrack-demo.apk](https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk)**
+**[Download `healthtrack-demo.apk`](https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk)**
 
-The build demonstrates the implemented app journeys using the local demo data source. It does **not** represent a live healthcare provider, real medical records, real doctor availability or production payment processing.
+The APK is generated from this repository in showcase mode. It demonstrates the implemented flows with local session data.
+
+## Design language
+
+| Token | Value |
+|---|---|
+| Aqua | `#33E4DB` |
+| Cyan | `#00BBD3` |
+| Primary | `#13CAD6` |
+| Soft blue | `#E9F6FE` |
+| Pale lilac | `#ECF1FF` |
+| Ink | `#252525` |
+
+The motion language stays short and calm: restrained route transitions, state feedback, success motion and expandable content rather than aggressive bounce or decorative movement.
 
 ## Run locally
-
-If generated platform folders are not present yet:
 
 ```bash
 flutter create . --platforms=android,ios,web,macos
@@ -124,23 +163,10 @@ flutter run --dart-define=BACKEND_MODE=mock
 
 VS Code / Cursor also includes a **HealthTrack — Mock** launch configuration.
 
-## Design language
-
-Core palette:
-
-- Aqua `#33E4DB`
-- Cyan `#00BBD3`
-- Primary `#13CAD6`
-- Soft blue `#E9F6FE`
-- Pale lilac `#ECF1FF`
-- Ink `#252525`
-
-Motion stays deliberately calm: short route fades/slides, restrained selection feedback, splash/success motion and expandable content without aggressive bounce or visual noise.
-
 <details>
 <summary><strong>Full 61-screen Figma node → Flutter route catalog</strong></summary>
 
-<br />
+<br/>
 
 | # | Figma screen | Node | Flutter route |
 |---|---|---|---|
@@ -209,9 +235,10 @@ Motion stays deliberately calm: short route fades/slides, restrained selection f
 
 All **61 top-level HealthTrack UI frames** from the Figma page are now represented in Flutter. Repeated doctor/specialty layouts share reusable widgets internally, while each source frame keeps its own route and portfolio state.
 
+
 </details>
 
-## Repository structure
+## Repository map
 
 ```text
 lib/
@@ -237,22 +264,14 @@ lib/
   router/
 test/
 docs/
-  index.html
-  styles.css
-  script.js
-  assets/
 ```
-
-## Portfolio website
-
-The responsive portfolio lives in `docs/` so GitHub Pages can be published from **main / docs**.
-
-**Live URL:** https://husseinabozina.github.io/medical_app/
-
-The site intentionally uses lightweight SVG showcase assets and lazy-loading to avoid the long image waits that can happen when a portfolio ships several full-resolution PNG screenshots.
 
 ---
 
 <div align="center">
-  <sub>HealthTrack · Flutter engineering showcase by Hussein Abozina</sub>
+
+### [Live portfolio](https://husseinabozina.github.io/medical_app/) · [APK](https://github.com/Husseinabozina/medical_app/releases/download/showcase-latest/healthtrack-demo.apk) · [Figma source](https://www.figma.com/design/jrf18b58l0rdFM4uTN5DEg/Medical-App-UI-Kit-Health-Mobile-App-Tracker-Appointment-Mobile-App--Community-?node-id=2279-1229&m=dev)
+
+<sub>Flutter implementation & engineering showcase by Hussein Abozina.</sub>
+
 </div>
