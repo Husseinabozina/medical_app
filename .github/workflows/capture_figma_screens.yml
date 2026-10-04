@@ -27,7 +27,7 @@ jobs:
       - name: Capture selected Figma frames
         run: |
           mkdir -p docs/assets/figma
-          cat > /tmp/capture.mjs <<'EOF'
+          cat > capture.mjs <<'EOF'
           import { chromium } from 'playwright';
 
           const fileKey = 'jrf18b58l0rdFM4uTN5DEg';
@@ -67,10 +67,11 @@ jobs:
 
           await browser.close();
           EOF
-          node /tmp/capture.mjs
+          node capture.mjs
 
       - name: Optimize screenshots
         run: |
+          python -m pip install --quiet pillow
           python - <<'PY'
           from PIL import Image
           from pathlib import Path
