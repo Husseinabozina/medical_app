@@ -12,6 +12,14 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final profile = context.read<HealthRepository>().profile;
+    final initials = profile.name
+        .split(' ')
+        .where((part) => part.isNotEmpty)
+        .take(2)
+        .map((part) => part[0])
+        .join();
+
     return Scaffold(
       bottomNavigationBar: const HealthBottomNav(selectedIndex: 3),
       body: SafeArea(
@@ -40,18 +48,18 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 26),
-                  const DoctorAvatar(initials: 'HA', size: 104),
+                  DoctorAvatar(initials: initials, size: 104),
                   const SizedBox(height: 16),
                   Text(
-                    'Hussein Abozina',
+                    profile.name,
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.w900,
                         ),
                   ),
                   const SizedBox(height: 5),
-                  const Text(
-                    'hussein@example.com',
-                    style: TextStyle(color: AppColors.muted),
+                  Text(
+                    profile.email,
+                    style: const TextStyle(color: AppColors.muted),
                   ),
                   const SizedBox(height: 26),
                   SoftCard(
