@@ -1,13 +1,26 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FavoritesCubit extends Cubit<Set<String>> {
-  FavoritesCubit() : super(<String>{'emma'});
+import 'health_domain.dart';
 
-  void toggle(String doctorId) {
+class FavoritesCubit extends Cubit<Set<String>> {
+  FavoritesCubit(this._repository)
+      : super(Set<String>.from(_repository.favoriteDoctorIds));
+
+  final HealthRepository _repository;
+
+  Future<void> toggle(String doctorId) async {
+    final previous = Set<String>.from(state);
     final next = Set<String>.from(state);
     next.contains(doctorId) ? next.remove(doctorId) : next.add(doctorId);
     emit(next);
+
+    try {
+      await _repository.toggleFavorite(doctorId);
+    } catch (_) {
+      emit(previous);
+      rethrow;
+    }
   }
 }
 
