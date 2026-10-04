@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/design_system.dart';
+import '../../core/health_domain.dart';
 import '../home/home_screens.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -303,30 +305,50 @@ class NotificationsScreen extends StatelessWidget {
   }
 }
 
-class MessageScreen extends StatelessWidget {
+class MessageScreen extends StatefulWidget {
   const MessageScreen({super.key});
 
   @override
+  State<MessageScreen> createState() => _MessageScreenState();
+}
+
+class _MessageScreenState extends State<MessageScreen> {
+  final _controller = TextEditingController();
+  bool _sending = false;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Future<void> _send() async {
+    final text = _controller.text.trim();
+    if (text.isEmpty || _sending) return;
+
+    setState(() => _sending = true);
+    await context.read<HealthRepository>().sendMessage(text);
+    if (!mounted) return;
+
+    _controller.clear();
+    setState(() => _sending = false);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final messages = context.read<HealthRepository>().messages;
+
     return HealthScaffold(
       title: 'Dr. Emma',
       showBack: true,
       padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 16, 22),
       child: Column(
         children: [
-          const _MessageBubble(
-            text: 'Hello Hussein, I reviewed your latest notes.',
-            incoming: true,
-          ),
-          const _MessageBubble(
-            text: 'Thank you. Is there anything I should do before Monday?',
-            incoming: false,
-          ),
-          const _MessageBubble(
-            text:
-                'Please keep your current routine and bring your recent reports with you.',
-            incoming: true,
-          ),
+          for (final message in messages)
+            _MessageBubble(
+              text: message.text,
+              incoming: message.incoming,
+            ),
           const SizedBox(height: 22),
           Container(
             padding: const EdgeInsetsDirectional.fromSTEB(14, 4, 4, 4),
@@ -336,9 +358,12 @@ class MessageScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: TextField(
-                    decoration: InputDecoration(
+                    controller: _controller,
+                    textInputAction: TextInputAction.send,
+                    onSubmitted: (_) => _send(),
+                    decoration: const InputDecoration(
                       hintText: 'Type a message',
                       filled: false,
                       border: InputBorder.none,
@@ -350,8 +375,16 @@ class MessageScreen extends StatelessWidget {
                     backgroundColor: AppColors.primary,
                     foregroundColor: Colors.white,
                   ),
-                  onPressed: () {},
-                  icon: const Icon(CupertinoIcons.paperplane_fill),
+                  onPressed: _sending ? null : _send,
+                  icon: _sending
+                      ? const SizedBox.square(
+                          dimension: 18,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          ),
+                        )
+                      : const Icon(CupertinoIcons.paperplane_fill),
                 ),
               ],
             ),
