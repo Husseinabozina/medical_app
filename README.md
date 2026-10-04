@@ -1,6 +1,6 @@
 # HealthTrack — Flutter Portfolio App
 
-A 30-screen Flutter recreation of the **HealthTrack** Figma Community medical UI kit, built as a portfolio project rather than a production healthcare system.
+A 61-screen Flutter recreation of the complete **HealthTrack** Figma Community medical UI kit, built as a portfolio project rather than a production healthcare system.
 
 ## Goal
 
@@ -16,7 +16,7 @@ The project follows the same Figma-to-Flutter workflow used in the earlier UI po
 Figma source: **Medical App UI Kit / Health Mobile App Tracker / Appointment Mobile App**  
 Source file key: `jrf18b58l0rdFM4uTN5DEg`
 
-## 30 implemented screens
+## 61 implemented screens
 
 | # | Figma screen | Node | Flutter route |
 |---|---|---|---|
@@ -51,7 +51,39 @@ Source file key: `jrf18b58l0rdFM4uTN5DEg`
 | 29 | Payment Summary | `2128:1624` | `/payment/summary` |
 | 30 | Payment Successfully | `2128:1676` | `/payment/success` |
 
-The source Figma contains 61 top-level frames. We intentionally selected 30 screens that cover complete product flows instead of repeating near-identical specialty/doctor variants.
+| 31 | Dermatology Doctors | `2237:1809` | `/specialties/dermatology` |
+| 32 | General Doctors | `2237:2227` | `/specialties/general` |
+| 33 | Gynecology Doctors | `2237:2351` | `/specialties/gynecology` |
+| 34 | Odontology Doctors | `2237:2592` | `/specialties/odontology` |
+| 35 | Oncology Doctors | `2237:2715` | `/specialties/oncology` |
+| 36 | Ophthalmology Doctors | `2243:1478` | `/specialties/ophthalmology` |
+| 37 | Orthopedics Doctors | `2243:1596` | `/specialties/orthopedics` |
+| 38 | Doctor Rating | `2112:1184` | `/favorites/rating` |
+| 39 | Favorite Services | `2112:728` | `/favorites/services` |
+| 40 | Favorite Female Doctors | `2112:912` | `/favorites/female` |
+| 41 | Favorite Male Doctors | `2112:1045` | `/favorites/male` |
+| 42 | Edit Profile | `2133:2100` | `/profile/edit` |
+| 43 | Notification Setting | `2133:2058` | `/settings/notifications` |
+| 44 | Password Manager | `2133:2138` | `/settings/password-manager` |
+| 45 | Privacy Policy | `2133:2044` | `/settings/privacy` |
+| 46 | Help Center FAQ | `2052:4238` | `/help/faq` |
+| 47 | Help Center Contact Us | `2133:2220` | `/help/contact` |
+| 48 | Logout | `2221:336` | `/logout` |
+| 49 | Appointment Complete | `2194:608` | `/appointments/complete` |
+| 50 | Appointment Cancelled | `2194:545` | `/appointments/cancelled` |
+| 51 | Cancel Appointment | `2111:1373` | `/appointments/cancel` |
+| 52 | Pharmacy Filter | `2078:1198` | `/pharmacy/filter` |
+| 53 | Pharmacy Details | `2078:1239` | `/pharmacy/details` |
+| 54 | Medical Record Add Record | `2097:1121` | `/medical-record/add` |
+| 55 | Medical Record Menu | `2110:221` | `/medical-record/menu` |
+| 56 | Allergies | `2213:552` | `/medical-record/allergies` |
+| 57 | Analysis | `2107:156` | `/medical-record/analysis` |
+| 58 | Analysis Details | `2107:508` | `/medical-record/analysis/detail` |
+| 59 | Vaccinations | `2107:188` | `/medical-record/vaccinations` |
+| 60 | Medical History | `2107:220` | `/medical-record/history` |
+| 61 | Payment Method — Add Card | `2128:1588` | `/payment/add-card` |
+
+All **61 top-level HealthTrack UI frames** from the Figma page are now represented in Flutter. Repeated doctor/specialty layouts share reusable widgets internally, while each source frame keeps its own route and portfolio state.
 
 ## Design system
 
@@ -97,6 +129,7 @@ lib/
     appointments/
     services/
     payments/
+    extended/
   router/
     app_router.dart
 ```
