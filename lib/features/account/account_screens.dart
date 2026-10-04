@@ -84,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: 16),
                   SoftCard(
                     child: _ProfileRow(
-                      icon: CupertinoIcons.square_arrow_right,
+                      icon: CupertinoIcons.arrow_right,
                       title: 'Log out',
                       destructive: true,
                       onTap: () => context.go('/login'),
@@ -168,7 +168,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 const Divider(height: 1),
                 _ProfileRow(
-                  icon: CupertinoIcons.shield,
+                  icon: CupertinoIcons.lock,
                   title: 'Privacy policy',
                   onTap: () {},
                 ),
@@ -188,7 +188,7 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     const notifications = [
       (
-        CupertinoIcons.calendar_badge_plus,
+        CupertinoIcons.calendar,
         'Appointment confirmed',
         'Your visit with Dr. Emma is scheduled for Monday at 10:30 AM.',
         '2 min'
@@ -200,7 +200,7 @@ class NotificationsScreen extends StatelessWidget {
         '1 hr'
       ),
       (
-        CupertinoIcons.bandage,
+        CupertinoIcons.add_circled,
         'Pharmacy reminder',
         'Your saved pharmacy closes at 10:00 PM.',
         'Yesterday'
