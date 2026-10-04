@@ -59,7 +59,7 @@ class PaymentMethodScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     const Icon(
-                      CupertinoIcons.lock_shield,
+                      CupertinoIcons.lock,
                       color: AppColors.primary,
                     ),
                     const SizedBox(width: 12),
