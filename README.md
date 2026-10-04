@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/healthtrack-cover.svg" alt="HealthTrack — 61-screen Flutter product showcase" width="1200" />
+
 # HealthTrack
 
 ### 61-screen Flutter product implementation from a Figma Community healthcare UI system
