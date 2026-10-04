@@ -10,7 +10,7 @@ HealthTrack is a showcase application with no dedicated backend. The architectur
 
 ### Data
 
-`DemoHealthDataSource` owns deterministic showcase data. `DemoHealthRepository` delegates to that data source and is injected through `RepositoryProvider`.
+`MockHealthDataSource` owns deterministic showcase fixtures plus process-local mutable state. `HealthRepositoryImpl` delegates to the injected data source and is provided through `RepositoryProvider`.
 
 That keeps the execution path explicit:
 
@@ -18,15 +18,21 @@ That keeps the execution path explicit:
 Screen -> Cubit / presentation interaction -> HealthRepository -> HealthDataSource
 ```
 
-A future REST/Firebase data source can replace the demo implementation without changing the screen widgets.
+A future REST/Firebase data source can replace the mock implementation without changing screen widgets. `HealthBackendFactory` keeps that swap explicit through the `BACKEND_MODE` environment switch.
 
 ### Presentation state
 
-- `FavoritesCubit` owns the favorite doctor set.
+- `FavoritesCubit` owns presentation state for favorites while persisting each toggle through `HealthRepository`.
 - `BookingCubit` owns selected date, time, and payment method.
 - Local text-field and switch state remains local when it has no cross-screen business meaning.
 
 This is intentionally pragmatic Clean Architecture: boundaries that make replacement/testing useful are kept; empty use-case classes are not added only for ceremony.
+
+### Mock runtime behavior
+
+The mock backend simulates short API latency and supports session mutations for favorites, messages, appointments, medical records, payment cards and profile data. It is intentionally reversible: the presentation and domain layers depend on contracts, not on the mock implementation itself.
+
+The mock store is in-memory only, so a full app restart resets fixture state.
 
 ## Figma fidelity rules
 
