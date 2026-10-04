@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/design_system.dart';
 import '../../core/health_state.dart';
+import '../../core/navigation.dart';
 
 class _SourceFrameScaffold extends StatelessWidget {
   const _SourceFrameScaffold({
@@ -41,7 +42,7 @@ class _SourceFrameScaffold extends StatelessWidget {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () => Navigator.of(context).maybePop(),
+                        onPressed: () => AppNavigation.back(context),
                         icon: const Icon(
                           CupertinoIcons.back,
                           color: AppColors.white,
