@@ -988,9 +988,9 @@ class PharmacyDetailsScreen extends StatelessWidget {
       title: 'MediCure Pharmacy',
       child: Column(
         children: [
-          const _MapPreview(height: 190),
-          const SizedBox(height: 18),
-          const SoftCard(
+          _MapPreview(height: 190),
+          SizedBox(height: 18),
+          SoftCard(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -1027,12 +1027,12 @@ class PharmacyDetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 18),
-          const _SectionLabel('User frequency'),
-          const SizedBox(height: 12),
-          const _UsageBar(label: 'Morning', value: .2),
-          const _UsageBar(label: 'Afternoon', value: .8),
-          const _UsageBar(label: 'Evening', value: .5),
+          SizedBox(height: 18),
+          _SectionLabel('User frequency'),
+          SizedBox(height: 12),
+          _UsageBar(label: 'Morning', value: .2),
+          _UsageBar(label: 'Afternoon', value: .8),
+          _UsageBar(label: 'Evening', value: .5),
         ],
       ),
     );
