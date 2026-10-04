@@ -405,7 +405,7 @@ class _FilterScreenState extends State<FilterScreen> {
           ),
           const SizedBox(height: 4),
           Text(
-            '\${maxFee.toStringAsFixed(0)}',
+            '\u0024${maxFee.toStringAsFixed(0)}',
             style: const TextStyle(
               color: AppColors.primary,
               fontWeight: FontWeight.w900,
