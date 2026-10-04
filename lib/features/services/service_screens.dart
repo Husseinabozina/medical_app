@@ -45,7 +45,7 @@ class PharmacyScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(18),
                         ),
                         child: const Icon(
-                          CupertinoIcons.bandage,
+                          CupertinoIcons.add_circled,
                           color: AppColors.primary,
                           size: 30,
                         ),
@@ -179,19 +179,19 @@ class MedicalRecordScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           const _RecordItem(
-            icon: CupertinoIcons.lab_flask,
+            icon: CupertinoIcons.doc_text,
             title: 'Analysis',
             subtitle: '5 reports',
           ),
           const SizedBox(height: 12),
           const _RecordItem(
-            icon: CupertinoIcons.exclamationmark_shield,
+            icon: CupertinoIcons.exclamationmark_triangle,
             title: 'Allergies',
             subtitle: 'No severe allergies',
           ),
           const SizedBox(height: 12),
           const _RecordItem(
-            icon: CupertinoIcons.shield_lefthalf_fill,
+            icon: CupertinoIcons.check_mark_circled,
             title: 'Vaccinations',
             subtitle: '8 records',
           ),
