@@ -324,7 +324,16 @@ class SpecialtiesScreen extends StatelessWidget {
                 delay: Duration(milliseconds: 45 * index),
                 child: SoftCard(
                   onTap: () => context.push(
-                    index == 0 ? '/specialties/cardiology' : '/doctors',
+                    const <String>[
+                      '/specialties/cardiology',
+                      '/specialties/dermatology',
+                      '/specialties/general',
+                      '/specialties/gynecology',
+                      '/specialties/odontology',
+                      '/specialties/oncology',
+                      '/specialties/ophthalmology',
+                      '/specialties/orthopedics',
+                    ][index],
                   ),
                   color: index == 0 ? AppColors.softBlue : AppColors.white,
                   child: Column(
