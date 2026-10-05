@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">Minimal illustrated doctor avatar</title>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="16" x2="140" y2="148" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6FBFC"/>
+      <stop offset="1" stop-color="#BCEFF1"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="78" fill="url(#bg)"/>
+  <circle cx="80" cy="61" r="29" fill="#D8B08E"/>
+  <path d="M50 60c1-23 14-38 31-38 19 0 31 15 31 38-10-8-20-12-31-12-12 0-22 4-31 12Z" fill="#31434A"/>
+  <path d="M54 60c5-6 14-10 26-10 13 0 21 3 27 10v13c0 19-12 31-27 31S54 92 54 73V60Z" fill="#D8B08E"/>
+  <path d="M33 146c3-29 21-46 47-46s44 17 47 46H33Z" fill="#fff"/>
+  <path d="M58 105l22 22 22-22-8-5H66l-8 5Z" fill="#16A9B7"/>
+  <path d="M49 111l19 12 12 23H39c1-14 4-25 10-35Zm62 0-19 12-12 23h41c-1-14-4-25-10-35Z" fill="#F8FCFD"/>
+  <path d="M59 108l21 19 21-19" fill="none" stroke="#D7E8EA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="80" cy="80" r="76.5" fill="none" stroke="#fff" stroke-width="3"/>
+</svg>
