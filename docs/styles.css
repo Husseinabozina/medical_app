@@ -212,6 +212,22 @@ button{font:inherit}
   width:100%;height:100%;object-fit:contain;object-position:center center;background:#fff;
   transition:opacity .18s ease,transform .24s ease;
 }
+
+.avatar-overlays{position:absolute;inset:0;z-index:3;pointer-events:none}
+.avatar-overlays img{
+  position:absolute;
+  width:var(--avatar-size);
+  height:auto;
+  aspect-ratio:1;
+  left:var(--avatar-left);
+  top:var(--avatar-top);
+  border-radius:50%;
+  object-fit:cover;
+  background:#dff7f8;
+  box-shadow:0 0 0 1.5px rgba(255,255,255,.96);
+  transition:opacity .18s ease,transform .2s ease;
+}
+.avatar-overlays.is-changing img{opacity:.2;transform:scale(.96)}
 .screen-image-stage img.is-changing{opacity:.18;transform:scale(.985)}
 .screen-swap-indicator{
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:7px;
@@ -299,5 +315,5 @@ footer{background:#03171c;color:#d2e4e5}.footer-inner{min-height:115px;display:f
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
-.brand-logo{width:44px;height:44px;object-fit:contain;border-radius:15px;box-shadow:0 10px 30px rgba(17,190,210,.20)}
-.core-logo{width:74px;height:74px;object-fit:contain;margin-bottom:8px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.18))}
+.brand-logo{width:44px;height:44px;object-fit:contain;border-radius:0;box-shadow:none}
+.core-logo{width:82px;height:82px;object-fit:contain;margin-bottom:8px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.16))}
