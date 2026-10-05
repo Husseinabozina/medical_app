@@ -7,6 +7,7 @@
       route: '/home',
       image: 'docs/assets/app-screens/01-home.png',
       alt: 'HealthTrack home interface',
+      avatars: [{ left: '84.2%', top: '6.2%', size: '8.5%' }],
       copy: 'The main HealthTrack entry point with quick access, upcoming care and doctor discovery.'
     },
     specialties: {
@@ -25,6 +26,12 @@
       route: '/doctors',
       image: 'docs/assets/app-screens/03-doctors.png',
       alt: 'HealthTrack doctors interface',
+      avatars: [
+        { left: '12.4%', top: '44.7%', size: '20.2%' },
+        { left: '12.4%', top: '58.8%', size: '20.2%' },
+        { left: '12.4%', top: '73.2%', size: '20.2%' },
+        { left: '12.4%', top: '87.7%', size: '20.2%' }
+      ],
       copy: 'Doctor discovery with search, filters, cards and favorite state connected to the wider app flow.'
     },
     profile: {
@@ -34,6 +41,7 @@
       route: '/doctor/emma/profile',
       image: 'docs/assets/app-screens/04-doctor-profile.png',
       alt: 'HealthTrack doctor profile interface',
+      avatars: [{ left: '14.4%', top: '15.4%', size: '30.6%' }],
       copy: 'A detailed doctor view that keeps the path from discovery into booking focused and readable.'
     },
     schedule: {
@@ -52,6 +60,7 @@
       route: '/appointments/details',
       image: 'docs/assets/app-screens/06-appointment-details.png',
       alt: 'HealthTrack appointment details interface',
+      avatars: [{ left: '13.4%', top: '14.3%', size: '19.2%' }],
       copy: 'Appointment information and actions connected to cancellation, review and follow-up states.'
     },
     record: {
@@ -70,12 +79,14 @@
       route: '/payment/summary',
       image: 'docs/assets/app-screens/08-payment-summary.png',
       alt: 'HealthTrack payment summary interface',
+      avatars: [{ left: '7.8%', top: '29.7%', size: '23.8%' }],
       copy: 'The review step before the showcase payment success state and appointment confirmation.'
     }
   };
 
   const image = document.querySelector('#app-screen-image');
   const indicator = document.querySelector('#screen-swap-indicator');
+  const avatarOverlays = document.querySelector('#avatar-overlays');
   const number = document.querySelector('#screen-number');
   const title = document.querySelector('#screen-title');
   const flow = document.querySelector('#screen-flow');
@@ -94,6 +105,21 @@
     flow.textContent = screen.flow;
     route.textContent = screen.route;
     copy.textContent = screen.copy;
+
+    if (avatarOverlays) {
+      avatarOverlays.classList.add('is-changing');
+      avatarOverlays.replaceChildren();
+      (screen.avatars ?? []).forEach((avatar) => {
+        const mask = document.createElement('img');
+        mask.src = 'docs/assets/doctor-avatar.svg';
+        mask.alt = '';
+        mask.style.setProperty('--avatar-left', avatar.left);
+        mask.style.setProperty('--avatar-top', avatar.top);
+        mask.style.setProperty('--avatar-size', avatar.size);
+        avatarOverlays.appendChild(mask);
+      });
+      window.requestAnimationFrame(() => avatarOverlays.classList.remove('is-changing'));
+    }
 
     image.classList.add('is-changing');
     indicator?.classList.add('is-visible');
@@ -118,6 +144,8 @@
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => selectScreen(tab.dataset.screen));
   });
+
+  selectScreen('home');
 
   Object.values(screens).slice(1).forEach((screen) => {
     const preload = new Image();
