@@ -230,7 +230,7 @@ button{font:inherit}
 .avatar-overlays.is-changing img{opacity:.2;transform:scale(.96)}
 .screen-image-stage img.is-changing{opacity:.18;transform:scale(.985)}
 .screen-swap-indicator{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:7px;
+  position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;gap:7px;
   background:rgba(240,250,251,.72);opacity:0;visibility:hidden;transition:.18s;pointer-events:none
 }
 .screen-swap-indicator.is-visible{opacity:1;visibility:visible}
